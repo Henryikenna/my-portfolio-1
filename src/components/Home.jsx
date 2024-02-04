@@ -99,7 +99,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="">
+        <div className=" -mt-[20%] md:mt-0">
           <img
             className=" rounded-2xl mx-auto w-2/4 object-cover md:w-full"
             src={HeroImage}
