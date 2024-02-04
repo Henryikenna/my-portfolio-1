@@ -1,6 +1,6 @@
 import React from "react";
 import HeroImage from "../assets/heroImage.png";
-import { MdOutlineKeyboardArrowRight, MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
@@ -83,16 +83,16 @@ const Home = () => {
             ))}
           </div>
 
-          <div className="">
+          <div className=" ">
             <Link
               to="portfolio"
               smooth
               duration={500}
               className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md  bg-gradient-to-r from-gray-800 via-slate-900 to-gray-950
-              cursor-pointer"
+              cursor-pointer "
             >
               Portfolio{" "}
-              <span className=" rotate-90 md:rotate-0 md:group-hover:rotate-90 duration-300">
+              <span className=" rotate-90 md:rotate-0 md:group-hover:rotate-90 duration-300 ">
                 <MdOutlineKeyboardArrowRight className=" ml-1" size={22} />
               </span>
             </Link>
