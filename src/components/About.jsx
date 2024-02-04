@@ -25,10 +25,7 @@ const About = () => {
           purpose of this project isThis is a simple application to demonstrate
           how to use the Google Maps JavaScript API with React.js. quasi quasi
           quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi
-          quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi
-          quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi
-          quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi quasi
-          quasi quasi quasi quasi quasi quasi quasi quasi qu
+          quasi quasi quasi quasi
         </p>
       </div>
     </div>
