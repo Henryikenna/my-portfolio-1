@@ -101,6 +101,7 @@ const Home = () => {
 
         <div className=" -mt-[20%] md:mt-0">
           <img
+            loading="lazy"
             className=" rounded-2xl mx-auto w-2/4 object-cover md:w-full"
             src={HeroImage}
             alt="my profile"
