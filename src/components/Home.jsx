@@ -16,7 +16,7 @@ const Home = () => {
           LinkedIn
         </>
       ),
-      href: "https://linkedin.com/in/henry-unegbu-832838254",
+      href: "https://linkedin.com/in/henry-unegbu-832838254/",
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ const Home = () => {
           Github
         </>
       ),
-      href: "https://github.com/Henryikenna",
+      href: "https://github.com/Henryikenna/",
     },
     {
       id: 3,
