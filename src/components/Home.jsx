@@ -75,7 +75,7 @@ const Home = () => {
                 href={href}
                 download={download}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className=" text-white flex flex-col items-center text-sm gap-1"
               >
                 {child}
