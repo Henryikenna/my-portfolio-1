@@ -195,7 +195,7 @@ const Contact = () => {
         </div>
 
 
-        <div className="flex w-auto justify-between">
+        <div className="flex w-auto justify-between md:hidden">
         {links.map(({id, child, href, style, download}) => (
           <section
             key={id}

@@ -124,7 +124,7 @@ const Home = () => {
   return (
     <div className="firstSection h-dvh w-full relative" name="home">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#1C1C1C] pointer-events-none"></div>
-      <div className="flex flex-col items-center justify-center h-full bg-black bg-opacity-0 relative md:bg-opacity-25 md:justify-start lg:justify-center">
+      <div className="flex flex-col items-center justify-center h-full bg-black bg-opacity-0 relative md:bg-opacity-25 lg:justify-center">
         <img src={HeroImage} alt="" className="w-44 rounded-full bg-[#7F1F9A] mb-4 md:w-52" />
         {/* <h2 className=" text-2xl font-light text-white mt-20 md:text-6xl md:mt-[20%] lg:mt-[10%]"> */}
         {/* <h2 className=" text-2xl font-light text-white mt-4 md:text-4xl">
