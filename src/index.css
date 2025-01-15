@@ -38,15 +38,16 @@
     background-position: bottom;
   } */
 
-  .firstSection {
-    position: relative;
+   .firstSection {
+    /* position: relative;
     background-image: url("./assets/heroImage.png");
     background-size: 44%;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: bottom; */
+    background: linear-gradient(to bottom, #7f1f9a, #1c1c1c);
   }
 
-  .firstSection::before {
+ /* .firstSection::before {
     content: "";
     position: absolute;
     top: 0;
@@ -55,7 +56,7 @@
     height: 100%;
     background: linear-gradient(to bottom, #7f1f9a, #1c1c1c);
     z-index: -1;
-  }
+  } */
 
   /* .firstSection::after {
     content: "";
@@ -99,26 +100,62 @@
     transform: "translate(calc(var(--mouse-x) * -10px), calc(var(--mouse-y) * -10px))";
   }
 
+  /* .fade-enter {
+    opacity: 0;
+  }
+  .fade-enter-active {
+    opacity: 1;
+    transition: opacity 1000ms;
+  }
+  .fade-exit {
+    opacity: 1;
+  }
+  .fade-exit-active {
+    opacity: 0;
+    transition: opacity 1000ms;
+  } */
+
+  /* .fade-enter {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  .fade-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s, transform 1s;
+  }
+  .fade-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .fade-exit-active {
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 1s, transform 1s;
+  }
+   */
+  
+
   @media (max-width: 768px) {
     /* Your CSS for phones */
-    .firstSection {
+    /* .firstSection {
       position: relative;
       background-image: url("./assets/heroImage.png");
       background-size: 80%;
       background-repeat: no-repeat;
       background-position: bottom;
-    }
+    } */
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
     /* Your CSS for tablets */
-    .firstSection {
+    /* .firstSection {
       position: relative;
       background-image: url("./assets/heroImage.png");
       background-size: 80%;
       background-repeat: no-repeat;
       background-position: bottom;
-    }
+    } */
   }
 }
 

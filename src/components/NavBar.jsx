@@ -55,8 +55,8 @@ const [isScrolled, setIsScrolled] = useState(false);
 
 
         {/* POTRAIT */}
-      <div onClick={() => setNav(!nav)} className={`cursor-pointer z-10 flex justify-end items-end md:hidden ${isScrolled ? "text-white pr-2" : "bg-white text-black p-2 rounded-full"}`}>
-        {nav ? <FaTimes size={28} /> : <FaBars size={28} />}
+      <div onClick={() => setNav(!nav)} className={`cursor-pointer z-10 flex justify-end items-end md:hidden ${isScrolled ? "text-white pr-2" : "bg-black text-white p-2 rounded-full"}`}>
+        {nav ? <FaTimes size={27} /> : <FaBars size={27} />}
       </div>
 
       {nav && (

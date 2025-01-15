@@ -9,6 +9,7 @@ import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import DecryptionText from "./DecryptionText";
 
 const Home = () => {
   // const links = [
@@ -123,13 +124,24 @@ const Home = () => {
   return (
     <div className="firstSection h-dvh w-full relative" name="home">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#1C1C1C] pointer-events-none"></div>
-      <div className="flex flex-col items-center justify-start h-full bg-black bg-opacity-0 relative md:bg-opacity-25 lg:justify-center">
-        <h2 className=" text-2xl font-light text-white mt-20 md:text-6xl md:mt-[20%] lg:mt-[10%]">
+      <div className="flex flex-col items-center justify-center h-full bg-black bg-opacity-0 relative md:bg-opacity-25 md:justify-start lg:justify-center">
+        <img src={HeroImage} alt="" className="w-44 rounded-full bg-[#7F1F9A] mb-4 md:w-52" />
+        {/* <h2 className=" text-2xl font-light text-white mt-20 md:text-6xl md:mt-[20%] lg:mt-[10%]"> */}
+        {/* <h2 className=" text-2xl font-light text-white mt-4 md:text-4xl">
           Hello, I'm
         </h2>
-        <h1 className=" text-white font-extrabold text-2xl py-1 max-w-7xl md:py-4 md:text-7xl">
+        <h1 className=" text-white font-extrabold text-xl py-1 max-w-7xl md:py-1 md:text-5xl">
           Henry Unegbu
-        </h1>
+        </h1> */}
+        <DecryptionText />
+        {/* <h4 className=" text-gray-300 font-normal text-sm text-center py-1 max-w-xl md:py-3 md:text-sm">
+        I'm a versatile Software Developer with 3+ years of experience turning innovative ideas into impactful web and mobile solutions, specializing in React, Dart, Flutter, and Firebase to craft seamless, scalable user experiences.
+        </h4> */}
+        <h4 className=" text-gray-300 font-medium text-sm text-center py-1 max-w-[80%] md:font-semibold md:max-w-xl md:py-3 md:text-lg">
+        {/* I'm a Software Developer.
+          <br /> */}
+        I'm a Software Developer specialized in building ready-to-deploy websites and mobile applications.
+        </h4>
 
         {/* <div className="grid flex-wrap grid-cols-3 gap-3 items-end py-3 px-3 my-3 rounded-md bg-[#7F1F9A] bg-opacity-50 lg:hidden">
           {links.map(({ id, child, href, download }) => (
@@ -176,7 +188,7 @@ const Home = () => {
             </a>
           ))}
         </div> */}
-        <div
+        {/* <div
           // className="grid flex-wrap grid-cols-3 items-end py-3 px-3 my-3 rounded-md bg-[#7F1F9A] bg-opacity-50 lg:hidden"
           className="grid flex-wrap grid-cols-3 items-end py-1 px-1 my-3 rounded-md bg-[#7F1F9A] bg-opacity-50 md:hidden"
           style={{
@@ -207,7 +219,7 @@ const Home = () => {
               {child}
             </a>
           ))}
-        </div>
+        </div> */}
 
         <div className=" ">
           <Link

@@ -43,8 +43,73 @@
 
 
 import React, { useState } from "react";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { HiOutlineMail } from "react-icons/hi";
+import { BsFillPersonLinesFill } from "react-icons/bs";
 
 const Contact = () => {
+
+   const links = [
+      {
+        id: 1,
+        child: (
+          <>
+            <FaWhatsapp size={25} />
+          </>
+        ),
+        href: "https://wa.me/+23409063203950",
+      },
+      {
+        id: 2,
+        child: (
+          <>
+             <FaLinkedin size={25} />
+          </>
+        ),
+        href: "https://www.linkedin.com/in/henry-unegbu-832838254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        // style: "rounded-tr-md",
+      },
+      {
+        id: 3,
+        child: (
+          <>
+             <FaGithub size={25} />
+          </>
+        ),
+        href: "https://github.com/Henryikenna",
+      },
+      {
+        id: 4,
+        child: (
+          <>
+             <FaXTwitter size={25} />
+          </>
+        ),
+        href: "https://x.com/henryoncode",
+      },
+      {
+        id: 5,
+        child: (
+          <>
+             <HiOutlineMail size={25} />
+          </>
+        ),
+        href: "mailto:ikennaunegbu10@gmail.com",
+      },
+      {
+        id: 6,
+        child: (
+          <>
+             <BsFillPersonLinesFill size={25} />
+          </>
+        ),
+        href: "/resume.pdf",
+        download: true,
+      },
+    ];
+
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -87,7 +152,7 @@ const Contact = () => {
   return (
     <div name="contact" className="w-full h-dvh bg-gradient-to-b from-black via-gray-950 to-gray-800 p-4 text-white">
       <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
-        <div className="pb-4 md:pb-8">
+        <div className="pb-2 md:pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-gray-500">Contact</p>
           <p className="py-5 md:py-6">Submit the form below to get in touch with me.</p>
         </div>
@@ -115,7 +180,7 @@ const Contact = () => {
                 className={`p-2 bg-transparent border-2 rounded-md text-white focus:outline-none ${errors.message ? 'border-red-500' : ''}`}
                 name="message"
                 placeholder="Please enter your message"
-                rows="10"
+                rows="8"
                 value={formData.message}
                 onChange={handleChange}
               ></textarea>
@@ -125,6 +190,29 @@ const Contact = () => {
               Let's Talk
             </button>
           </form>
+
+          
+        </div>
+
+
+        <div className="flex w-auto justify-between">
+        {links.map(({id, child, href, style, download}) => (
+          <section
+            key={id}
+            className={
+              "flex justify-between items-center" +
+              " " +
+              style
+            }
+          >
+            <a
+              className="flex justify-between items-center w-full text-white"
+              href={href} download={download} target="_blank" rel="noreferrer"
+            >
+              {child}
+            </a>
+          </section>
+        ))}
         </div>
       </div>
     </div>
