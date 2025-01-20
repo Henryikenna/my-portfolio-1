@@ -22,10 +22,14 @@ const [isScrolled, setIsScrolled] = useState(false);
     },
     {
       id: 4,
-      link: "experience",
+      link: "technologies",
     },
     {
       id: 5,
+      link: "experience",
+    },
+    {
+      id: 6,
       link: "contact",
     },
   ];

@@ -202,9 +202,10 @@
 // export default ProjectShowcase;
 
 import React, { useState, useRef } from "react";
+import { TbExternalLink } from "react-icons/tb";
 import amiriCar from "../assets/portfolio/amiriCar.jpeg";
 import anirivic from "../assets/portfolio/anirivic.jpeg";
-import disneyClone from "../assets/portfolio/disneyClone.jpeg";
+// import disneyClone from "../assets/portfolio/disneyClone.jpeg";
 import zws from "../assets/portfolio/zws.jpeg";
 import nbLogo from "../assets/portfolio/nblogo.png";
 import nbDemoVideo from "../assets/portfolio/nbdemovideo.png";
@@ -212,6 +213,13 @@ import conferenceFlyer from "../assets/portfolio/conference_flyer.png";
 import picoMascot from "../assets/portfolio/pico_mascot.jpg";
 import picoAppReview from "../assets/portfolio/picoapppreview.png";
 import dilBusCard from "../assets/portfolio/dilinna_business_card2.png";
+import eazilink from "../assets/portfolio/eazilinkLs.png";
+import monarc from "../assets/portfolio/monarc.png";
+import propertyPro from "../assets/portfolio/propertypro.png";
+import sunlit from "../assets/portfolio/sunlit.png";
+import disneyClone from "../assets/portfolio/disneyClone2.png";
+import aiObjectDetector from "../assets/portfolio/aiobjdetectorpreview.png";
+import starPowr from "../assets/portfolio/starPowr.png";
 
 const ProjectShowcase = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -240,14 +248,14 @@ const ProjectShowcase = () => {
         "An app where individuals can easily barter their unwanted possessions for desired ones.",
       technologies: ["Flutter", "Dart", "Riverpod"],
       image: nbDemoVideo,
-        demo: "https://drive.google.com/file/d/1SSZISriaTz8daILLb8OvMUxnUu7bUCZr/view?usp=sharing",
+      demo: "https://drive.google.com/file/d/1SSZISriaTz8daILLb8OvMUxnUu7bUCZr/view?usp=sharing",
       code: "https://github.com/Henryikenna/naijabarterapp",
     },
     {
       id: 3,
       title: "Business Conference Flyer",
       type: "graphics",
-    //   description: "Creative design work using modern tools",
+      //   description: "Creative design work using modern tools",
       technologies: ["Canva"],
       image: conferenceFlyer,
       demo: "",
@@ -255,13 +263,16 @@ const ProjectShowcase = () => {
     },
     {
       id: 4,
-      title: "Aniri Vinchgrine",
+      title: "Monarc",
+      titleAddonTitle: "Post on X",
+      titleAddonURL: "https://x.com/henryoncode/status/1818310259875762461",
       type: "web",
-      description: "A home listing website.",
-      technologies: ["HTML", "CSS"],
-      image: anirivic,
-      demo: "https://aniri-vinchgrine.vercel.app/",
-      code: "https://github.com/Henryikenna/Aniri-Vinchgrine/",
+      description:
+        "A collaboration website with my UI/UX friend @markuiux on X. A crypto-trading website.",
+      technologies: ["React JS", "TailwindCSS", "JavaScript"],
+      image: monarc,
+      demo: "https://monarc.vercel.app/",
+      code: "https://github.com/Henryikenna/monarc",
     },
     {
       id: 5,
@@ -271,19 +282,112 @@ const ProjectShowcase = () => {
         "An app where users can access AI functionalities outside the main app with the use of an overlay (shown in the image above).",
       technologies: ["Flutter", "Dart", "Riverpod", "Firebase", "OpenAI API"],
       image: picoAppReview,
-        demo: "https://www.linkedin.com/posts/henry-unegbu-832838254_flutter-firebase-ugcPost-7254965470720614400-2Nth?utm_source=share&utm_medium=member_desktop",
+      demo: "https://www.linkedin.com/posts/henry-unegbu-832838254_flutter-firebase-ugcPost-7254965470720614400-2Nth?utm_source=share&utm_medium=member_desktop",
       code: "https://github.com/Henryikenna/Pico",
     },
     {
-        id: 6,
-        title: "Business Card Design",
-        type: "graphics",
+      id: 6,
+      title: "Business Card Design",
+      type: "graphics",
       //   description: "Creative design work using modern tools",
-        technologies: ["Canva"],
-        image: dilBusCard,
-        demo: "",
-        code: "",
-      },
+      technologies: ["Canva"],
+      image: dilBusCard,
+      demo: "",
+      code: "",
+    },
+    {
+      id: 7,
+      title: "Sunlit Carribean Estate",
+      type: "web",
+      description: "A vacation home listing and renting website.",
+      technologies: ["Next.js", "TailwindCSS", "TypeScript"],
+      image: sunlit,
+      demo: "https://sunlit-caribbean-estate.vercel.app/",
+      code: "https://github.com/Henryikenna/sunlit-estate-website",
+    },
+    {
+      id: 8,
+      title: "Eazilink",
+      titleAddonTitle: "My Eazilink Web profile",
+      titleAddonURL: "https://eazilink.com/qr/DHSXENIPnY0s7wVRDnlW",
+      type: "mobile",
+      description:
+        "An app that lets users store their social media handles and create web profiles that they can share to friends. In the newer versions it has an AI Resume checker and other features.",
+      technologies: [
+        "Flutter",
+        "Dart",
+        "Riverpod",
+        "Firebase",
+        "Rive",
+        "AnthropicAI API",
+      ],
+      image: eazilink,
+      demo: "https://drive.google.com/drive/folders/17OpKLL4gizLH9RT9Hx-f8XBiBBlpoAEw",
+      code: "https://github.com/Eazi-Link/Eazilink",
+    },
+    {
+      id: 10,
+      title: "Disney Website Clone",
+      type: "web",
+      description: "A clone of the disney website the uses the 'themoviedb' API to get current released movies across different genres.",
+      technologies: ["React JS", "TailwindCSS", "themoviedb API", "Axios"],
+      image: disneyClone,
+      demo: "https://sunlit-caribbean-estate.vercel.app/",
+      code: "https://github.com/Henryikenna/sunlit-estate-website",
+    },
+    {
+      id: 11,
+      title: "PropertyPro",
+      // titleAddonTitle: "My Eazilink Web profile",
+      // titleAddonURL: "https://eazilink.com/qr/DHSXENIPnY0s7wVRDnlW",
+      type: "mobile",
+      description:
+        "A collaboration app with a UI/UX friend @Seky_t on X. A real estate property app.",
+      technologies: [
+        "Flutter",
+        "Dart"
+      ],
+      image: propertyPro,
+      demo: "https://x.com/henryoncode/status/1740171358213197929",
+      code: "https://github.com/Henryikenna/property_pro_app",
+    },
+    
+    {
+      id: 13,
+      title: "Star Powr",
+      type: "web",
+      description: "A website for Agencies & Businesses.",
+      technologies: ["React JS", "TailwindCSS"],
+      image: starPowr,
+      demo: "https://star-powr.vercel.app/",
+      code: "https://github.com/Henryikenna/star_powr",
+    },
+    {
+      id: 14,
+      title: "Object Detector with TFlite",
+      // titleAddonTitle: "My Eazilink Web profile",
+      // titleAddonURL: "https://eazilink.com/qr/DHSXENIPnY0s7wVRDnlW",
+      type: "mobile",
+      description:
+        "An app that automatically detects objects in the camera.",
+      technologies: [
+        "Flutter",
+        "Dart", "Tensor Flow"
+      ],
+      image: aiObjectDetector,
+      demo: "httpswww.linkedin.compostshenry-unegbu-832838254_flutter-tflite-ai-activity-7270122097920671745-zWfButm_source=share&utm_medium=member_desktop",
+      code: "https://github.com/Henryikenna/TFlite-AI-Object-Detector",
+    },
+    {
+      id: 16,
+      title: "Aniri Vinchgrine",
+      type: "web",
+      description: "A home listing website.",
+      technologies: ["HTML", "CSS"],
+      image: anirivic,
+      demo: "https://aniri-vinchgrine.vercel.app/",
+      code: "https://github.com/Henryikenna/Aniri-Vinchgrine/",
+    },
   ];
 
   const projects = {
@@ -402,17 +506,29 @@ const ProjectShowcase = () => {
                 {/* <h3 className="text-xl font-bold text-white mb-1">
                   {project.title}
                 </h3> */}
-                <h3
-                  className="text-xl font-bold text-white mb-1 overflow-hidden"
-                  style={{
-                    display: "-webkit-box",
-                    WebkitBoxOrient: "vertical",
-                    WebkitLineClamp: 2,
-                    overflow: "hidden",
-                  }}
-                >
-                  {project.title}
-                </h3>
+                <div className="flex items-center gap-2">
+                  <h3
+                    className="text-xl font-bold text-white mb-1 overflow-hidden"
+                    style={{
+                      display: "-webkit-box",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 2,
+                      overflow: "hidden",
+                    }}
+                  >
+                    {project.title}
+                  </h3>
+                  {project.titleAddonTitle && (
+                    <a
+                      href={project.titleAddonURL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-sm font-medium underline text-[#7F1F9A]"
+                    >
+                      {project.titleAddonTitle} <TbExternalLink />
+                    </a>
+                  )}
+                </div>
 
                 {/* <p className="text-gray-400 mb-3 text-sm overflow-ellipsis">{project.description}</p> */}
                 <p
@@ -474,8 +590,8 @@ const ProjectShowcase = () => {
                   {project.type === "graphics" ? (
                     <button
                       onClick={() => handleViewClick(project.image)}
-                    //   className="px-4 py-2 bg-blue-600 text-sm font-medium text-white rounded hover:bg-blue-500 transition-colors"
-                          className="px-4 py-2 bg-gray-700 text-sm font-medium text-white rounded hover:bg-gray-600 transition-colors"
+                      //   className="px-4 py-2 bg-blue-600 text-sm font-medium text-white rounded hover:bg-blue-500 transition-colors"
+                      className="px-4 py-2 bg-gray-700 text-sm font-medium text-white rounded hover:bg-gray-600 transition-colors"
                     >
                       {" "}
                       View{" "}
@@ -509,12 +625,9 @@ const ProjectShowcase = () => {
                   )}
                 </div>
               </div>
-          </div>
-        ))}
-      </div>
-
-
-
+            </div>
+          ))}
+        </div>
         {/* Fullscreen Image Popup */}{" "}
         {fullscreenImage && (
           <div
@@ -536,37 +649,34 @@ const ProjectShowcase = () => {
             </button>{" "}
           </div>
         )}
-
-
-        
         {/* Pagination */}
         <div className="pagination flex justify-center mt-8 space-x-4">
-        <button
+          <button
             className={`px-6 py-2 rounded-full transition-all duration-300 ${
               currentPage === 0
                 ? "bg-gray-800 text-gray-500 cursor-not-allowed"
                 : "bg-gray-800 text-white hover:bg-gray-700"
-          }`}
-          onClick={() => handlePageChange(-1)}
-          disabled={currentPage === 0}
-        >
-          Previous
-        </button>
-        <button
+            }`}
+            onClick={() => handlePageChange(-1)}
+            disabled={currentPage === 0}
+          >
+            Previous
+          </button>
+          <button
             className={`px-6 py-2 rounded-full transition-all duration-300 ${
               currentPage >=
               Math.ceil(projects[activeTab].length / rowsPerPage) - 1
                 ? "bg-gray-800 text-gray-500 cursor-not-allowed"
                 : "bg-gray-800 text-white hover:bg-gray-700"
-          }`}
-          onClick={() => handlePageChange(1)}
+            }`}
+            onClick={() => handlePageChange(1)}
             disabled={
               currentPage >=
               Math.ceil(projects[activeTab].length / rowsPerPage) - 1
             }
-        >
-          Next
-        </button>
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>
