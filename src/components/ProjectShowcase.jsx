@@ -308,7 +308,7 @@ const ProjectShowcase = () => {
     {
       id: 8,
       title: "Eazilink",
-      titleAddonTitle: "My Eazilink Web profile",
+      titleAddonTitle: "My Eazilink profile",
       titleAddonURL: "https://eazilink.com/qr/DHSXENIPnY0s7wVRDnlW",
       type: "mobile",
       description:
@@ -332,8 +332,8 @@ const ProjectShowcase = () => {
       description: "A clone of the disney website the uses the 'themoviedb' API to get current released movies across different genres.",
       technologies: ["React JS", "TailwindCSS", "themoviedb API", "Axios"],
       image: disneyClone,
-      demo: "https://sunlit-caribbean-estate.vercel.app/",
-      code: "https://github.com/Henryikenna/sunlit-estate-website",
+      demo: "https://disney-clone-henryoncode.vercel.app/",
+      code: "https://github.com/Henryikenna/disney-clone-react-app",
     },
     {
       id: 11,

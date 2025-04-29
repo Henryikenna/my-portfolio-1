@@ -146,7 +146,7 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      role: "Mobile Developer",
+      role: "Senior Developer",
       company: "Psilocybin",
       jobRoles: [
         "Developed a barter trading mobile app called NaijaBarter using Flutter and Firebase, enabling users to exchange goods and services without cash.",
@@ -170,7 +170,7 @@ const Experience = () => {
     },
     {
       id: 3,
-      role: "Mobile Engineer",
+      role: "Junior Flutter Developer",
       company: "Attainbase ERP",
       jobRoles: [
         "Developed a comprehensive ERP mobile application using Flutter and Isar for offline-first data management, enabling businesses to track inventory, manage employees, and generate reports seamlessly. Integrated Riverpod for efficient state management.",
@@ -179,7 +179,7 @@ const Experience = () => {
     },
     {
       id: 4,
-      role: "Mobile Developer",
+      role: "Senior Flutter Developer",
       company: "KekeDrop",
       jobRoles: [
         "Developed a Flutter-based ride-hailing application with Google Maps integration, real-time tracking, and payment gateway support.",
