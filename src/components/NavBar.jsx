@@ -38,12 +38,7 @@ const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => { const handleScroll = () => { if (window.scrollY > 0) { setIsScrolled(true); } else { setIsScrolled(false); } }; window.addEventListener("scroll", handleScroll); return () => window.removeEventListener("scroll", handleScroll); }, []);
 
   return (
-    // <nav className="flex justify-between items-center w-full h-20 text-white fixed bg-black px-4 z-40 bg-opacity-30 backdrop-filter backdrop-blur-lg">
-    // <nav className="flex justify-center items-center w-full h-20 text-white fixed bg-black px-4 z-40 bg-opacity-30 backdrop-filter backdrop-blur-lg">
     <nav className={`flex justify-end items-center w-full h-20 text-white fixed px-4 z-50 transition-colors duration-300 md:justify-center ${isScrolled ? "bg-black bg-opacity-30 backdrop-filter backdrop-blur-lg" : "bg-transparent"}`}>
-      {/* <div className="">
-        <h1 className=" text-5xl font-signature ml-2">Henry</h1>
-      </div> */}
 
       {/* LANDSCAPE */}
       <ul className="hidden md:flex">
@@ -64,7 +59,6 @@ const [isScrolled, setIsScrolled] = useState(false);
       </div>
 
       {nav && (
-        // <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
         <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-[#7F1F9A] to-gray-950 text-white">
         {links.map(({ id, link }) => (
             <li

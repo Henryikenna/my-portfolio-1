@@ -1,212 +1,9 @@
-// import React, { useState, useRef } from "react";
-
-// const ProjectShowcase = () => {
-//   const [activeTab, setActiveTab] = useState("all");
-//   const [currentPage, setCurrentPage] = useState(0);
-
-//   // Enhanced project data structure
-//   const projects = {
-//     all: [
-//       {
-//         id: 1,
-//         title: "Web Project 1",
-//         type: "web",
-//         description: "A modern web application built with React and TailwindCSS",
-//         technologies: ["React", "TailwindCSS", "Node.js"],
-//         image: "https://placehold.co/1920x1080/1a1a1a/7F1F9A?text=Project+1",
-//         demo: "demo-link",
-//         code: "github-link"
-//       },
-//       {
-//         id: 2,
-//         title: "Mobile Project 1",
-//         type: "mobile",
-//         description: "Cross-platform mobile app developed with Flutter",
-//         technologies: ["Flutter", "Firebase", "Dart"],
-//         image: "https://placehold.co/1920x1080/1a1a1a/7F1F9A?text=Project+2",
-//         demo: "demo-link",
-//         code: "github-link"
-//       },
-//       {
-//         id: 3,
-//         title: "Graphics Project 1",
-//         type: "graphics",
-//         description: "Creative design work using modern tools",
-//         technologies: ["Photoshop", "Illustrator", "Figma"],
-//         image: "https://placehold.co/1920x1080/1a1a1a/7F1F9A?text=Project+3",
-//         demo: "",
-//         code: ""
-//       },
-//     ],
-//     // Filter projects by type for other tabs
-//     web: [/* filtered web projects */],
-//     mobile: [/* filtered mobile projects */],
-//     graphics: [/* filtered graphics projects */]
-//   };
-
-//   // Initialize filtered arrays
-//   projects.web = projects.all.filter(project => project.type === "web");
-//   projects.mobile = projects.all.filter(project => project.type === "mobile");
-//   projects.graphics = projects.all.filter(project => project.type === "graphics");
-
-//   const rowsPerPage = 3;
-//   const tabs = ["all", "web", "mobile", "graphics"];
-
-//   const handleTabClick = (tab) => {
-//     setActiveTab(tab);
-//     setCurrentPage(0);
-//   };
-
-//   const handlePageChange = (direction) => {
-//     setCurrentPage((prevPage) => prevPage + direction);
-//   };
-
-//   const paginatedProjects = projects[activeTab].slice(
-//     currentPage * rowsPerPage,
-//     (currentPage + 1) * rowsPerPage
-//   );
-
-//   // Image hover effect handler
-//   const handleMouseMove = (e, cardRef) => {
-//     if (!cardRef.current) return;
-
-//     const { left, top, width, height } = cardRef.current.getBoundingClientRect();
-//     const x = (e.clientX - left) / width;
-//     const y = (e.clientY - top) / height;
-
-//     cardRef.current.style.setProperty("--mouse-x", `${x * 100}%`);
-//     cardRef.current.style.setProperty("--mouse-y", `${y * 100}%`);
-//   };
-
-//   return (
-//     <div className="project-showcase max-w-7xl mx-auto px-4">
-//       {/* Tabs */}
-//       <div className="tabs flex justify-center mb-8 space-x-4">
-//         {tabs.map((tab) => (
-//           <button
-//             key={tab}
-//             className={`tab-button px-6 py-2 rounded-full transition-all duration-300
-//               ${activeTab === tab
-//                 ? "bg-[#7F1F9A] text-white"
-//                 : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`}
-//             onClick={() => handleTabClick(tab)}
-//           >
-//             {tab.charAt(0).toUpperCase() + tab.slice(1)}
-//           </button>
-//         ))}
-//       </div>
-
-//       {/* Project Grid */}
-//       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-//         {paginatedProjects.map((project) => {
-//           const cardRef = useRef(null);
-
-//           return (
-//             <div
-//               key={project.id}
-//               ref={cardRef}
-//               className="group relative bg-gray-800 rounded-xl overflow-hidden transform transition-all duration-300 hover:-translate-y-2"
-//               onMouseMove={(e) => handleMouseMove(e, cardRef)}
-//             >
-//               {/* Image Container */}
-//               <div className="relative h-48 overflow-hidden">
-//                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent z-10"></div>
-//                 <img
-//                   src={project.image}
-//                   alt={project.title}
-//                   className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-//                   style={{
-//                     transform: "translate(calc(var(--mouse-x) * -5px), calc(var(--mouse-y) * -5px))"
-//                   }}
-//                 />
-//               </div>
-
-//               {/* Content */}
-//               <div className="p-6">
-//                 {/* Project Type Badge */}
-//                 <span className="inline-block px-3 py-1 text-sm rounded-full bg-[#7F1F9A] text-white mb-4">
-//                   {project.type}
-//                 </span>
-
-//                 <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-//                 <p className="text-gray-400 mb-4">{project.description}</p>
-
-//                 {/* Technologies */}
-//                 <div className="flex flex-wrap gap-2 mb-6">
-//                   {project.technologies.map((tech, index) => (
-//                     <span
-//                       key={index}
-//                       className="px-2 py-1 text-sm bg-gray-700 text-gray-300 rounded"
-//                     >
-//                       {tech}
-//                     </span>
-//                   ))}
-//                 </div>
-
-//                 {/* Buttons */}
-//                 <div className="flex space-x-3">
-//                   {project.demo && (
-//                     <a
-//                       href={project.demo}
-//                       target="_blank"
-//                       rel="noopener noreferrer"
-//                       className="px-4 py-2 bg-[#7F1F9A] text-white rounded hover:bg-[#6a1a82] transition-colors"
-//                     >
-//                       Demo
-//                     </a>
-//                   )}
-//                   {project.code && (
-//                     <a
-//                       href={project.code}
-//                       target="_blank"
-//                       rel="noopener noreferrer"
-//                       className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition-colors"
-//                     >
-//                       Code
-//                     </a>
-//                   )}
-//                 </div>
-//               </div>
-//             </div>
-//           );
-//         })}
-//       </div>
-
-//       {/* Pagination */}
-//       <div className="pagination flex justify-center mt-8 space-x-4">
-//         <button
-//           className={`px-6 py-2 rounded-full transition-all duration-300
-//             ${currentPage === 0
-//               ? "bg-gray-800 text-gray-500 cursor-not-allowed"
-//               : "bg-gray-800 text-white hover:bg-gray-700"}`}
-//           onClick={() => handlePageChange(-1)}
-//           disabled={currentPage === 0}
-//         >
-//           Previous
-//         </button>
-//         <button
-//           className={`px-6 py-2 rounded-full transition-all duration-300
-//             ${currentPage >= Math.ceil(projects[activeTab].length / rowsPerPage) - 1
-//               ? "bg-gray-800 text-gray-500 cursor-not-allowed"
-//               : "bg-gray-800 text-white hover:bg-gray-700"}`}
-//           onClick={() => handlePageChange(1)}
-//           disabled={currentPage >= Math.ceil(projects[activeTab].length / rowsPerPage) - 1}
-//         >
-//           Next
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProjectShowcase;
-
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { TbExternalLink } from "react-icons/tb";
 import { IoMdClose } from "react-icons/io";
 import amiriCar from "../assets/portfolio/amiriCar.jpeg";
 import anirivic from "../assets/portfolio/anirivic.jpeg";
-// import disneyClone from "../assets/portfolio/disneyClone.jpeg";
 import zws from "../assets/portfolio/zws.jpeg";
 import nbLogo from "../assets/portfolio/nblogo.png";
 import nbDemoVideo from "../assets/portfolio/nbdemovideo.png";
@@ -225,14 +22,29 @@ import caseradar from "../assets/portfolio/caseradar.png";
 import caseradarMobile from "../assets/portfolio/caseradarMobile.png";
 import segwaeApp from "../assets/portfolio/segwaeApp.jpg";
 import webDerk from "../assets/portfolio/webDerk.png";
+import grammar234 from "../assets/portfolio/grammar234.png";
+import screenguard from "../assets/portfolio/screenguard.jpg";
 
 const ProjectShowcase = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [currentPage, setCurrentPage] = useState(0);
   const [fullscreenImage, setFullscreenImage] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isPanelVisible, setIsPanelVisible] = useState(false);
 
   const cardRefs = useRef([]);
+
+  // Animate panel in after it mounts
+  useEffect(() => {
+    if (selectedProject) {
+      requestAnimationFrame(() => setIsPanelVisible(true));
+    }
+  }, [selectedProject]);
+
+  const closeProjectPanel = () => {
+    setIsPanelVisible(false);
+    setTimeout(() => setSelectedProject(null), 300);
+  };
 
   const projectsData = [
     {
@@ -243,6 +55,17 @@ const ProjectShowcase = () => {
       technologies: ["React", "TailwindCSS"],
       image: caseradar,
       demo: "https://caseradar.ai/",
+      code: "",
+    },
+    {
+      id: 106,
+      title: "ScreenGuard",
+      type: "mobile",
+      isPersonal: true,
+      description: "Android utility app that places a translucent, touch-proof overlay over your screen so audio and video keep playing uninterrupted — no accidental taps from pockets or bags. Unlock with a U-shape swipe gesture or emergency 20-tap exit. No background processes, no data collection, no internet required, and no ads.",
+      technologies: ["Flutter", "Dart"],
+      image: screenguard,
+      demo: "https://play.google.com/store/apps/details?id=com.screenguard.app",
       code: "",
     },
     {
@@ -267,11 +90,22 @@ const ProjectShowcase = () => {
       code: "",
     },
     {
+      id: 105,
+      title: "234Grammar",
+      type: "web",
+      isStartup: true,
+      description: "Culturally-aware grammar and style checker built for Nigerian and West African English. Supports Nigerian English, Standard English, and Pidgin — validating expressions that standard grammar tools incorrectly flag as errors. Features cloud sync, document history, multi-format export (PDF, DOCX, TXT), and flexible Naira-based pricing.",
+      technologies: ["Next.js", "TailwindCSS", "Supabase", "Resend"],
+      image: grammar234,
+      demo: "https://234grammar.com/",
+      code: "",
+    },
+    {
       id: 104,
       title: "WebDerk",
       type: "web",
       description: "E-commerce platform specializing in digital subscription services across multiple platforms. Developed user-friendly interface with secure payment integration, subscription management, and automated delivery systems for digital products.",
-      technologies: ["React", "JavaScript", "TailwindCSS", "Supabse"],
+      technologies: ["React", "JavaScript", "TailwindCSS", "Supabase"],
       image: webDerk,
       demo: "https://webderk.org",
       code: "",
@@ -280,13 +114,13 @@ const ProjectShowcase = () => {
       id: 1,
       title: "Amari Cars Clone",
       type: "web",
+      isPersonal: true,
       description: "Modern recreation of premium automotive website featuring responsive design and optimized user experience. Demonstrates proficiency in semantic HTML and advanced CSS techniques.",
       technologies: ["HTML", "CSS"],
       image: amiriCar,
       demo: "https://amaricarsclone.vercel.app/",
       code: "https://github.com/Henryikenna/amari-website-fake/",
     },
-
     {
       id: 2,
       title: "NaijaBarter",
@@ -302,7 +136,6 @@ const ProjectShowcase = () => {
       id: 3,
       title: "Business Conference Flyer",
       type: "graphics",
-      //   description: "Creative design work using modern tools",
       technologies: ["Canva"],
       image: conferenceFlyer,
       demo: "",
@@ -311,6 +144,7 @@ const ProjectShowcase = () => {
     {
       id: 4,
       title: "Monarc",
+      isPersonal: true,
       titleAddonTitle: "Post on X",
       titleAddonURL: "https://x.com/henryoncode/status/1818310259875762461",
       type: "web",
@@ -325,6 +159,7 @@ const ProjectShowcase = () => {
       id: 5,
       title: "Pico",
       type: "mobile",
+      isPersonal: true,
       description:
         "AI-powered productivity tool with innovative overlay interface enabling cross-app AI assistance. Integrates OpenAI API with Firebase backend for seamless intelligent functionality accessible from any screen.",
       technologies: ["Flutter", "Dart", "Riverpod", "Firebase", "OpenAI API"],
@@ -336,7 +171,6 @@ const ProjectShowcase = () => {
       id: 6,
       title: "Business Card Design",
       type: "graphics",
-      //   description: "Creative design work using modern tools",
       technologies: ["Canva"],
       image: dilBusCard,
       demo: "",
@@ -346,6 +180,7 @@ const ProjectShowcase = () => {
       id: 7,
       title: "Sunlit Carribean Estate",
       type: "web",
+      isPersonal: true,
       description: "Luxury vacation rental platform built with Next.js featuring property listings, advanced search filters, and optimized SEO. Delivers fast page loads and seamless booking experience for premium clientele.",
       technologies: ["Next.js", "TailwindCSS", "TypeScript"],
       image: sunlit,
@@ -355,6 +190,7 @@ const ProjectShowcase = () => {
     {
       id: 8,
       title: "Eazilink",
+      isPersonal: true,
       titleAddonTitle: "My Eazilink profile",
       titleAddonURL: "https://eazilink.com/qr/DHSXENIPnY0s7wVRDnlW",
       type: "mobile",
@@ -376,6 +212,7 @@ const ProjectShowcase = () => {
       id: 10,
       title: "Disney Website Clone",
       type: "web",
+      isPersonal: true,
       description: "Entertainment streaming platform interface recreation featuring dynamic content fetching from TheMovieDB API. Demonstrates advanced React patterns, API integration with Axios, and responsive media-rich layouts.",
       technologies: ["React JS", "TailwindCSS", "themoviedb API", "Axios"],
       image: disneyClone,
@@ -385,9 +222,8 @@ const ProjectShowcase = () => {
     {
       id: 11,
       title: "PropertyPro",
-      // titleAddonTitle: "My Eazilink Web profile",
-      // titleAddonURL: "https://eazilink.com/qr/DHSXENIPnY0s7wVRDnlW",
       type: "mobile",
+      isPersonal: true,
       description:
         "Real estate property discovery application developed with UI/UX designer @Seky_t. Features intuitive property browsing, advanced filters, and optimized mobile performance for seamless real estate exploration.",
       technologies: [
@@ -398,11 +234,11 @@ const ProjectShowcase = () => {
       demo: "https://x.com/henryoncode/status/1740171358213197929",
       code: "https://github.com/Henryikenna/property_pro_app",
     },
-    
     {
       id: 13,
       title: "Star Powr",
       type: "web",
+      isPersonal: true,
       description: "Corporate website solution for agencies and businesses featuring modern design, smooth animations, and conversion-optimized layouts. Built with performance and scalability in mind.",
       technologies: ["React JS", "TailwindCSS"],
       image: starPowr,
@@ -412,23 +248,23 @@ const ProjectShowcase = () => {
     {
       id: 14,
       title: "Object Detector with TFlite",
-      // titleAddonTitle: "My Eazilink Web profile",
-      // titleAddonURL: "https://eazilink.com/qr/DHSXENIPnY0s7wVRDnlW",
       type: "mobile",
+      isPersonal: true,
       description:
         "Real-time object detection mobile application powered by TensorFlow Lite. Demonstrates machine learning integration in Flutter with camera processing for intelligent object recognition and classification.",
       technologies: [
         "Flutter",
-        "Dart", "Tensor Flow"
+        "Dart", "TensorFlow"
       ],
       image: aiObjectDetector,
-      demo: "httpswww.linkedin.compostshenry-unegbu-832838254_flutter-tflite-ai-activity-7270122097920671745-zWfButm_source=share&utm_medium=member_desktop",
+      demo: "https://www.linkedin.com/posts/henry-unegbu-832838254_flutter-tflite-ai-activity-7270122097920671745-zWfB?utm_source=share&utm_medium=member_desktop",
       code: "https://github.com/Henryikenna/TFlite-AI-Object-Detector",
     },
     {
       id: 16,
       title: "Aniri Vinchgrine",
       type: "web",
+      isPersonal: true,
       description: "Property listing website showcasing residential real estate with clean, user-friendly interface. Emphasizes visual presentation and easy navigation for property seekers.",
       technologies: ["HTML", "CSS"],
       image: anirivic,
@@ -476,6 +312,7 @@ const ProjectShowcase = () => {
   const handleViewClick = (image) => {
     setFullscreenImage(image);
   };
+
   const closeFullscreen = () => {
     setFullscreenImage(null);
   };
@@ -484,248 +321,203 @@ const ProjectShowcase = () => {
     setSelectedProject(project);
   };
 
-  const closeProjectPanel = () => {
-    setSelectedProject(null);
-  };
-
   return (
     <div className="">
       <div className="project-showcase flex flex-col gap-6 max-w-7xl mx-auto md:gap-20 md:flex-row">
-      {/* Tabs */}
-      {/* <div className="tabs flex flex-col w-[20%] justify-center mb-8 space-x-4"> */}
-      <div className="tabs flex gap-x-1 justify-center md:flex-col md:w-[10%] md:justify-start md:gap-x-0 md:gap-y-[0.125rem]">
-        {tabs.map((tab) => (
-          //   <button
-          //     key={tab}
-          //     className={`tab-button px-6 py-2 rounded-full transition-all duration-300 ${
-          //       activeTab === tab
-          //         ? "bg-[#7F1F9A] text-white"
-          //         : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-          //     }`}
-          //     onClick={() => handleTabClick(tab)}
-          //   >
-          //     {tab.charAt(0).toUpperCase() + tab.slice(1)}
-          //   </button>
-          <button
-            key={tab}
-            className={`tab-button px-3 py-2 rounded-full text-sm md:text-base md:text-left md:rounded-tl-none md:rounded-tr-md md:rounded-bl-none md:rounded-br-md transition-all duration-300 ${
-              activeTab === tab
-                ? "bg-[#7F1F9A] text-white"
-                : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-            }`}
-            onClick={() => handleTabClick(tab)}
-          >
-            {tab.charAt(0).toUpperCase() + tab.slice(1)}
-          </button>
-        ))}
-      </div>
-
-      <div className=" mx-2 md:w-[90%]">
-        {/* Project Grid */}
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {paginatedProjects.map((project, index) => (
-            <div
-              key={project.id}
-              ref={(el) => (cardRefs.current[index] = el)}
-              className="group relative bg-gray-800 rounded-xl border border-[#7F1F9A] overflow-hidden transform transition-all duration-300 md:border-none hover:-translate-y-2 cursor-pointer"
-              onMouseMove={(e) => handleMouseMove(e, index)}
-              onClick={() => handleProjectClick(project)}
+        {/* Tabs */}
+        <div className="tabs flex gap-x-1 justify-center md:flex-col md:w-[10%] md:justify-start md:gap-x-0 md:gap-y-[0.125rem]">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              className={`tab-button px-3 py-2 rounded-full text-sm md:text-base md:text-left md:rounded-tl-none md:rounded-tr-md md:rounded-bl-none md:rounded-br-md transition-all duration-300 ${
+                activeTab === tab
+                  ? "bg-[#7F1F9A] text-white"
+                  : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+              }`}
+              onClick={() => handleTabClick(tab)}
             >
-              {/* Image Container */}
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent z-10"></div> */}
-              <div className="relative h-44 overflow-hidden md:h-48">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  //   className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-                  className="project-image w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-                  //   style={{
-                  //     transform:
-                  //       "translate(calc(var(--mouse-x) * -5px), calc(var(--mouse-y) * -5px))",
-                  //   }}
-                />
-              </div>
+              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+            </button>
+          ))}
+        </div>
 
-              {/* Project Type Badge */}
-              <span className="inline-block px-3 py-1 font-medium text-xs rounded-br-sm bg-[#7F1F9A] text-white">
-                {project.type}
-                {/* {project.type.charAt(0).toUpperCase() + project.type.slice(1)} */}
-              </span>
+        <div className=" mx-2 md:w-[90%]">
+          {/* Project Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {paginatedProjects.map((project, index) => (
+              <div
+                key={project.id}
+                ref={(el) => (cardRefs.current[index] = el)}
+                className="group relative bg-gray-800 rounded-xl border border-[#7F1F9A] overflow-hidden transform transition-all duration-300 md:border-none hover:-translate-y-2 cursor-pointer"
+                onMouseMove={(e) => handleMouseMove(e, index)}
+                onClick={() => handleProjectClick(project)}
+              >
+                {/* Image Container */}
+                <div className="relative h-44 overflow-hidden md:h-48">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-image w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
 
-              {/* Content */}
-              <div className="p-4">
                 {/* Project Type Badge */}
-                {/* <span className="inline-block px-3 py-1 text-sm rounded-full bg-[#7F1F9A] text-white mb-4">
-                {project.type}
-              </span> */}
+                <span className="inline-block px-3 py-1 font-medium text-xs rounded-br-sm bg-[#7F1F9A] text-white">
+                  {project.type}
+                </span>
 
-                {/* <h3 className="text-xl font-bold text-white mb-1">
-                  {project.title}
-                </h3> */}
-                <div className="flex items-center gap-2 flex-wrap">
-                  <h3
-                    className="text-xl font-bold text-white mb-1 overflow-hidden"
+                {/* Content */}
+                <div className="p-4">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3
+                      className="text-xl font-bold text-white mb-1 overflow-hidden"
+                      style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: 2,
+                        overflow: "hidden",
+                      }}
+                    >
+                      {project.title}
+                    </h3>
+                    {project.isStartup && (
+                      <span className="px-2 py-1 text-xs font-semibold bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full mb-1 animate-pulse">
+                        My Startup
+                      </span>
+                    )}
+                    {project.isPersonal && (
+                      <span className="px-2 py-1 text-xs font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full mb-1">
+                        Personal Project
+                      </span>
+                    )}
+                    {project.titleAddonTitle && (
+                      <a
+                        href={project.titleAddonURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-sm font-medium underline text-[#7F1F9A]"
+                      >
+                        {project.titleAddonTitle} <TbExternalLink />
+                      </a>
+                    )}
+                  </div>
+
+                  <p
+                    className="text-gray-400 mb-3 text-sm overflow-hidden"
                     style={{
                       display: "-webkit-box",
                       WebkitBoxOrient: "vertical",
-                      WebkitLineClamp: 2,
+                      WebkitLineClamp: 7,
                       overflow: "hidden",
                     }}
                   >
-                    {project.title}
-                  </h3>
-                  {project.isStartup && (
-                    <span className="px-2 py-1 text-xs font-semibold bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full mb-1 animate-pulse">
-                      My Startup
-                    </span>
-                  )}
-                  {project.titleAddonTitle && (
-                    <a
-                      href={project.titleAddonURL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-sm font-medium underline text-[#7F1F9A]"
-                    >
-                      {project.titleAddonTitle} <TbExternalLink />
-                    </a>
-                  )}
-                </div>
+                    {project.description}
+                  </p>
 
-                {/* <p className="text-gray-400 mb-3 text-sm overflow-ellipsis">{project.description}</p> */}
-                <p
-                  className="text-gray-400 mb-3 text-sm overflow-hidden"
-                  style={{
-                    display: "-webkit-box",
-                    WebkitBoxOrient: "vertical",
-                    WebkitLineClamp: 7,
-                    overflow: "hidden",
-                  }}
-                >
-                  {project.description}
-                </p>
+                  <div className="custom-projects-scrollbar flex gap-2 mt-3 mb-5 pb-1 overflow-x-auto whitespace-nowrap md:mb-6">
+                    {project.technologies.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 text-xs bg-gray-700 text-gray-300 rounded inline-block"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
 
-                {/* Technologies */}
-                {/* <div className="flex scroll-auto gap-2 mb-6 pr-6">
-                {project.technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="px-2 py-1 text-sm bg-gray-700 text-gray-300 rounded"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div> */}
-                <div className="custom-projects-scrollbar flex gap-2 mt-3 mb-5 pb-1 overflow-x-auto whitespace-nowrap md:mb-6">
-                  {project.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-2 py-1 text-xs bg-gray-700 text-gray-300 rounded inline-block"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Buttons */}
-                <div className="flex space-x-3" onClick={(e) => e.stopPropagation()}>
-                  {project.type === "graphics" ? (
-                    <button
-                      onClick={() => handleViewClick(project.image)}
-                      className="px-4 py-2 bg-gray-700 text-sm font-medium text-white rounded hover:bg-gray-600 transition-colors"
-                    >
-                      {" "}
-                      View{" "}
-                    </button>
-                  ) : (
-                    <>
-                      {" "}
-                      {project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 bg-[#7F1F9A] text-sm font-medium text-white rounded hover:bg-[#6a1a82] transition-colors"
-                        >
-                          {" "}
-                          Demo{" "}
-                        </a>
-                      )}{" "}
-                      {project.code && (
-                        <a
-                          href={project.code}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 bg-gray-700 text-sm font-medium text-white rounded hover:bg-gray-600 transition-colors"
-                        >
-                          {" "}
-                          Code{" "}
-                        </a>
-                      )}{" "}
-                    </>
-                  )}
+                  {/* Buttons */}
+                  <div className="flex space-x-3" onClick={(e) => e.stopPropagation()}>
+                    {project.type === "graphics" ? (
+                      <button
+                        onClick={() => handleViewClick(project.image)}
+                        className="px-4 py-2 bg-gray-700 text-sm font-medium text-white rounded hover:bg-gray-600 transition-colors"
+                      >
+                        View
+                      </button>
+                    ) : (
+                      <>
+                        {project.demo && (
+                          <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-[#7F1F9A] text-sm font-medium text-white rounded hover:bg-[#6a1a82] transition-colors"
+                          >
+                            Demo
+                          </a>
+                        )}
+                        {project.code && (
+                          <a
+                            href={project.code}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-gray-700 text-sm font-medium text-white rounded hover:bg-gray-600 transition-colors"
+                          >
+                            Code
+                          </a>
+                        )}
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-        {/* Fullscreen Image Popup */}{" "}
-        {fullscreenImage && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
-            onClick={closeFullscreen}
-          >
-            {" "}
-            <img
-              src={fullscreenImage}
-              alt="Fullscreen"
-              className="max-w-full max-h-full"
-            />{" "}
-            <button
-              className="absolute top-4 right-4 text-white text-3xl"
+            ))}
+          </div>
+
+          {/* Fullscreen Image Popup */}
+          {fullscreenImage && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
               onClick={closeFullscreen}
             >
-              {" "}
-              &times;{" "}
-            </button>{" "}
+              <img
+                src={fullscreenImage}
+                alt="Fullscreen"
+                className="max-w-full max-h-full"
+              />
+              <button
+                className="absolute top-4 right-4 text-white text-3xl"
+                onClick={closeFullscreen}
+              >
+                &times;
+              </button>
+            </div>
+          )}
+
+          {/* Pagination */}
+          <div className="pagination flex justify-center mt-8 space-x-4">
+            <button
+              className={`px-6 py-2 rounded-full transition-all duration-300 ${
+                currentPage === 0
+                  ? "bg-gray-800 text-gray-500 cursor-not-allowed"
+                  : "bg-gray-800 text-white hover:bg-gray-700"
+              }`}
+              onClick={() => handlePageChange(-1)}
+              disabled={currentPage === 0}
+            >
+              Previous
+            </button>
+            <button
+              className={`px-6 py-2 rounded-full transition-all duration-300 ${
+                currentPage >=
+                Math.ceil(projects[activeTab].length / rowsPerPage) - 1
+                  ? "bg-gray-800 text-gray-500 cursor-not-allowed"
+                  : "bg-gray-800 text-white hover:bg-gray-700"
+              }`}
+              onClick={() => handlePageChange(1)}
+              disabled={
+                currentPage >=
+                Math.ceil(projects[activeTab].length / rowsPerPage) - 1
+              }
+            >
+              Next
+            </button>
           </div>
-        )}
-        {/* Pagination */}
-        <div className="pagination flex justify-center mt-8 space-x-4">
-          <button
-            className={`px-6 py-2 rounded-full transition-all duration-300 ${
-              currentPage === 0
-                ? "bg-gray-800 text-gray-500 cursor-not-allowed"
-                : "bg-gray-800 text-white hover:bg-gray-700"
-            }`}
-            onClick={() => handlePageChange(-1)}
-            disabled={currentPage === 0}
-          >
-            Previous
-          </button>
-          <button
-            className={`px-6 py-2 rounded-full transition-all duration-300 ${
-              currentPage >=
-              Math.ceil(projects[activeTab].length / rowsPerPage) - 1
-                ? "bg-gray-800 text-gray-500 cursor-not-allowed"
-                : "bg-gray-800 text-white hover:bg-gray-700"
-            }`}
-            onClick={() => handlePageChange(1)}
-            disabled={
-              currentPage >=
-              Math.ceil(projects[activeTab].length / rowsPerPage) - 1
-            }
-          >
-            Next
-          </button>
         </div>
       </div>
 
-      
-    </div>
-
-    {/* Slide-in Project Details Panel */}
-      {selectedProject && (
+      {/* Slide-in Project Details Panel — rendered via portal to escape parent transforms */}
+      {selectedProject && createPortal(
         <>
           {/* Overlay */}
           <div
@@ -734,7 +526,11 @@ const ProjectShowcase = () => {
           ></div>
 
           {/* Slide-in Panel */}
-          <div className="fixed top-0 right-0 h-full w-full md:w-2/3 lg:w-1/2 bg-gradient-to-b from-gray-900 to-gray-800 shadow-2xl z-50 overflow-y-auto transform transition-transform duration-300 ease-out">
+          <div
+            className={`fixed top-0 right-0 h-full w-full md:w-2/3 lg:w-1/2 bg-gradient-to-b from-gray-900 to-gray-800 shadow-2xl z-50 overflow-y-auto transform transition-transform duration-300 ease-out ${
+              isPanelVisible ? "translate-x-0" : "translate-x-full"
+            }`}
+          >
             {/* Close Button */}
             <button
               onClick={closeProjectPanel}
@@ -763,6 +559,11 @@ const ProjectShowcase = () => {
                   {selectedProject.isStartup && (
                     <span className="px-3 py-1 text-sm font-semibold bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full animate-pulse">
                       My Startup
+                    </span>
+                  )}
+                  {selectedProject.isPersonal && (
+                    <span className="px-3 py-1 text-sm font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full">
+                      Personal Project
                     </span>
                   )}
                 </div>
@@ -819,7 +620,8 @@ const ProjectShowcase = () => {
               </div>
             </div>
           </div>
-        </>
+        </>,
+        document.body
       )}
     </div>
   );
