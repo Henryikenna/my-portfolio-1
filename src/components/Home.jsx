@@ -12,49 +12,6 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import DecryptionText from "./DecryptionText";
 
 const Home = () => {
-  // const links = [
-  //   {
-  //     id: 1,
-  //     child: (
-  //       <>
-  //         <FaLinkedin size={25} />
-  //         LinkedIn
-  //       </>
-  //     ),
-  //     href: "https://linkedin.com/in/henry-unegbu-832838254/",
-  //   },
-  //   {
-  //     id: 2,
-  //     child: (
-  //       <>
-  //         <FaGithub size={25} />
-  //         Github
-  //       </>
-  //     ),
-  //     href: "https://github.com/Henryikenna/",
-  //   },
-  //   {
-  //     id: 3,
-  //     child: (
-  //       <>
-  //         <HiOutlineMail size={25} />
-  //         E-mail
-  //       </>
-  //     ),
-  //     href: "mailto:ikennaunegbu10@gmail.com",
-  //   },
-  //   {
-  //     id: 4,
-  //     child: (
-  //       <>
-  //         <BsFillPersonLinesFill size={25} />
-  //         Resume
-  //       </>
-  //     ),
-  //     href: "/resume.pdf",
-  //     download: true,
-  //   },
-  // ];
 
   const links = [
     {
@@ -122,104 +79,21 @@ const Home = () => {
   ];
 
   return (
-    <div className="firstSection h-dvh w-full relative" name="home">
+    <div className="firstSection min-h-dvh w-full relative" name="home">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#1C1C1C] pointer-events-none"></div>
-      <div className="flex flex-col items-center justify-center h-full bg-black bg-opacity-0 relative md:bg-opacity-25 lg:justify-center">
-        <img src={HeroImage} alt="" className="w-44 rounded-full bg-[#7F1F9A] mb-4 md:w-52" />
-        {/* <h2 className=" text-2xl font-light text-white mt-20 md:text-6xl md:mt-[20%] lg:mt-[10%]"> */}
-        {/* <h2 className=" text-2xl font-light text-white mt-4 md:text-4xl">
-          Hello, I'm
-        </h2>
-        <h1 className=" text-white font-extrabold text-xl py-1 max-w-7xl md:py-1 md:text-5xl">
-          Henry Unegbu
-        </h1> */}
+      <div className="flex flex-col items-center justify-center min-h-dvh bg-black bg-opacity-0 relative md:bg-opacity-25 lg:justify-center">
+        <img src={HeroImage} alt="" className="w-44 h-44 rounded-full object-cover object-top aspect-square bg-[#7F1F9A] mb-4 md:w-52 md:h-52" />
+        
+        
         <DecryptionText />
-        {/* <h4 className=" text-gray-300 font-normal text-sm text-center py-1 max-w-xl md:py-3 md:text-sm">
-        I'm a versatile Software Developer with 3+ years of experience turning innovative ideas into impactful web and mobile solutions, specializing in React, Dart, Flutter, and Firebase to craft seamless, scalable user experiences.
-        </h4> */}
+        
         <h4 className=" text-gray-300 font-medium text-sm text-center py-1 max-w-[80%] md:font-semibold md:max-w-xl md:py-3 md:text-lg">
-        {/* I'm a Software Developer.
-          <br /> */}
-        I'm a Software Developer specialized in building ready-to-deploy websites and mobile applications.
+
+        A Software Developer delivering production-ready web and mobile solutions that drive business growth and user engagement.
         </h4>
 
-        {/* <div className="grid flex-wrap grid-cols-3 gap-3 items-end py-3 px-3 my-3 rounded-md bg-[#7F1F9A] bg-opacity-50 lg:hidden">
-          {links.map(({ id, child, href, download }) => (
-            <a
-              key={id}
-              href={href}
-              download={download}
-              target="_blank"
-              rel="noopener noreferrer"
-              className=" text-white flex flex-col items-center text-sm gap-1"
-            >
-              {child}
-            </a>
-          ))}
-        </div> */}
-        {/* <div
-          // className="grid flex-wrap grid-cols-3 gap-3 items-end py-3 px-3 my-3 rounded-md bg-[#7F1F9A] bg-opacity-50 lg:hidden"
-          className="grid flex-wrap grid-cols-3 items-end py-3 px-3 my-3 rounded-md bg-[#7F1F9A] bg-opacity-50 lg:hidden"
-          style={{
-            borderCollapse: "separate",
-            borderSpacing: "0", // Ensure no extra space between cells
-          }}
-        >
-          {links.map(({ id, child, href, download }, index) => (
-            <a
-              key={id}
-              href={href}
-              download={download}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`text-white flex flex-col items-center text-sm gap-1 p-3 border ${
-                // index % 3 === 2 ? "border-r-0 border-l-0" : "" // Remove right border on the last column
-                index % 3 === 3 ? "border-r-0 border-l-0" : "" // Remove right border on the last column
-              } ${
-                // Math.floor(index / 3) === Math.floor((links.length - 1) / 3)
-                //   ? "border-b-0 border-t-0"
-                index % 3 === 3 ? "border-b-0 border-t-0" : "" // Remove bottom border on the last row
-              }`}
-              style={{
-                borderColor: "rgba(255, 255, 255, 0.3)", // Adjust border color
-              }}
-            >
-              {child}
-            </a>
-          ))}
-        </div> */}
-        {/* <div
-          // className="grid flex-wrap grid-cols-3 items-end py-3 px-3 my-3 rounded-md bg-[#7F1F9A] bg-opacity-50 lg:hidden"
-          className="grid flex-wrap grid-cols-3 items-end py-1 px-1 my-3 rounded-md bg-[#7F1F9A] bg-opacity-50 md:hidden"
-          style={{
-            borderCollapse: "separate",
-            borderSpacing: "0", // Ensure no extra space between cells
-          }}
-        >
-          {links.map(({ id, child, href, download }, index) => (
-            <a
-              key={id}
-              href={href}
-              download={download}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`text-white flex flex-col items-center text-sm gap-1 p-3 border ${
-                index % 3 === 0 ? "border-l-0" : ""
-              } ${index % 3 === 2 ? "border-r-0" : ""} ${
-                Math.floor(index / 3) === 0 ? "border-t-0" : ""
-              } ${
-                Math.floor(index / 3) === Math.floor((links.length - 1) / 3)
-                  ? "border-b-0"
-                  : ""
-              }`}
-              style={{
-                borderColor: "rgba(255, 255, 255, 0.3)", // Adjust border color
-              }}
-            >
-              {child}
-            </a>
-          ))}
-        </div> */}
+        
+        
 
         <div className=" ">
           <Link

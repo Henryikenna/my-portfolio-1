@@ -1,4 +1,5 @@
 import React from "react";
+import FadeInSection from "./FadeInSection";
 import amiriCar from "../assets/portfolio/amiriCar.jpeg";
 import anirivic from "../assets/portfolio/anirivic.jpeg";
 import disneyClone from "../assets/portfolio/disneyClone.jpeg";
@@ -47,16 +48,18 @@ const Portfolio = () => {
   return (
     <div
       name="portfolio"
-      className=" bg-gradient-to-b from-[#151515] via-gray-950 to-gray-800 w-full text-white md:h-dvh"
+      className=" bg-gradient-to-b from-[#151515] via-gray-950 to-gray-800 w-full text-white md:min-h-dvh py-16"
       // className=" bg-[#151515] w-full text-white md:h-dvh"
     >
       <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-        <div className=" pb-5 md:pb-8">
-          <p className=" text-4xl font-bold inline border-b-4 border-gray-500">
-            Portfolio
-          </p>
-          <p className=" pt-3 md:pt-6">Check out some of my work right here</p>
-        </div>
+        <FadeInSection>
+          <div className=" pb-5 md:pb-8">
+            <p className=" text-4xl font-bold inline border-b-4 border-gray-500">
+              Portfolio
+            </p>
+            <p className=" pt-3 md:pt-6">Explore a selection of projects demonstrating technical expertise across web, mobile, and design disciplines</p>
+          </div>
+        </FadeInSection>
 
         {/* <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
           {portfolios.map(({ id, src, demoLink, codeLink }) => (
@@ -77,7 +80,9 @@ const Portfolio = () => {
             </div>
           ))}
         </div> */}
-        <ProjectShowcase />
+        <FadeInSection delay={100}>
+          <ProjectShowcase />
+        </FadeInSection>
       </div>
     </div>
   );
