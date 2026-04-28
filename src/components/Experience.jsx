@@ -124,7 +124,7 @@ const Experience = () => {
             <span className="section-eyebrow mb-3">// 04 — journey</span>
             <h2 className="font-display text-4xl md:text-5xl text-warm-white">Experience</h2>
             <span className="gold-line mt-4 max-w-xs block" />
-            <p className="text-warm-white/40 text-sm mt-4 max-w-lg">
+            <p className="text-warm-white/60 text-sm mt-4 max-w-lg">
               Professional journey delivering impactful solutions across diverse industries.
             </p>
           </div>
@@ -141,7 +141,7 @@ const Experience = () => {
                 >
                   <div className="flex flex-col gap-1">
                     <div className="flex items-center gap-3 flex-wrap">
-                      <span className="font-display text-lg md:text-xl text-warm-white/80 group-hover:text-warm-white transition-colors duration-200">
+                      <span className="font-display text-lg md:text-xl text-warm-white/90 group-hover:text-warm-white transition-colors duration-200">
                         {exp.role}
                       </span>
                       {exp.isCurrent && (
@@ -150,7 +150,7 @@ const Experience = () => {
                         </span>
                       )}
                     </div>
-                    <span className="font-mono text-[11px] uppercase tracking-widest text-gold/60">
+                    <span className="font-mono text-[11px] uppercase tracking-widest text-gold/80">
                       {exp.companyUrl ? (
                         <a
                           href={exp.companyUrl}
@@ -167,7 +167,7 @@ const Experience = () => {
                     </span>
                   </div>
                   <LuChevronDown
-                    className={`text-warm-white/25 shrink-0 ml-4 transition-transform duration-300 ${
+                    className={`text-warm-white/40 shrink-0 ml-4 transition-transform duration-300 ${
                       openItems[exp.id] ? "rotate-180" : "rotate-0"
                     }`}
                     size={18}
@@ -179,8 +179,8 @@ const Experience = () => {
                   <div className="px-5 pb-5 md:px-6 md:pb-6 border-t border-[#1a1a1a]">
                     <ul className="mt-4 space-y-3">
                       {exp.jobRoles.map((role, i) => (
-                        <li key={i} className="flex gap-3 text-warm-white/45 text-sm leading-relaxed">
-                          <span className="text-gold/40 mt-1.5 shrink-0">—</span>
+                        <li key={i} className="flex gap-3 text-warm-white/72 text-sm leading-relaxed">
+                          <span className="text-gold/60 mt-1.5 shrink-0">—</span>
                           <span>{role}</span>
                         </li>
                       ))}

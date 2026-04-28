@@ -30,7 +30,7 @@ const About = () => {
           {/* Bio text */}
           <div className="md:col-span-3 space-y-6">
             <FadeInSection delay={100}>
-              <p className="about-text text-warm-white/55 leading-relaxed text-base">
+              <p className="about-text text-warm-white/75 leading-relaxed text-base">
                 I'm <b>Henry Unegbu</b>, a <b>Software Developer</b> with over{" "}
                 <b>3 years of professional experience</b> delivering high-impact web and mobile
                 applications. I specialize in transforming complex business requirements into
@@ -40,7 +40,7 @@ const About = () => {
             </FadeInSection>
 
             <FadeInSection delay={200}>
-              <p className="about-text text-warm-white/55 leading-relaxed text-base">
+              <p className="about-text text-warm-white/75 leading-relaxed text-base">
                 My technical expertise spans <b>React</b>, <b>JavaScript</b>, <b>Flutter</b>, and{" "}
                 <b>Dart</b>, with proven capabilities in full-stack development. From architecting
                 responsive user interfaces to implementing robust backend integrations with{" "}
@@ -50,7 +50,7 @@ const About = () => {
             </FadeInSection>
 
             <FadeInSection delay={300}>
-              <p className="about-text text-warm-white/55 leading-relaxed text-base">
+              <p className="about-text text-warm-white/75 leading-relaxed text-base">
                 I've contributed to projects across diverse industries — e-commerce, real estate,
                 legal tech, and enterprise platforms. My approach combines technical precision with
                 strategic problem-solving, ensuring solutions align with both user needs and
@@ -59,7 +59,7 @@ const About = () => {
             </FadeInSection>
 
             <FadeInSection delay={400}>
-              <p className="about-text text-warm-white/55 leading-relaxed text-base">
+              <p className="about-text text-warm-white/75 leading-relaxed text-base">
                 I maintain active involvement in the developer community through open-source
                 contributions and continuous learning, staying current with emerging technologies
                 to deliver cutting-edge solutions.
@@ -77,10 +77,10 @@ const About = () => {
                 <ul className="divide-y divide-[#1a1a1a]">
                   {quickFacts.map(({ label, value }, i) => (
                     <li key={i} className="px-5 py-4">
-                      <span className="font-mono text-[10px] uppercase tracking-widest text-warm-white/25 block mb-1">
+                      <span className="font-mono text-[10px] uppercase tracking-widest text-warm-white/45 block mb-1">
                         {label}
                       </span>
-                      <span className="text-warm-white/70 text-sm">{value}</span>
+                      <span className="text-warm-white/85 text-sm">{value}</span>
                     </li>
                   ))}
                 </ul>

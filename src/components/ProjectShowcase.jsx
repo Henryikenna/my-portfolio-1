@@ -398,7 +398,7 @@ const ProjectShowcase = () => {
                   </div>
 
                   <p
-                    className="text-warm-white/35 text-xs leading-relaxed mb-3"
+                    className="text-warm-white/65 text-xs leading-relaxed mb-3"
                     style={{
                       display: "-webkit-box",
                       WebkitBoxOrient: "vertical",
@@ -414,7 +414,7 @@ const ProjectShowcase = () => {
                     {project.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="font-mono text-[9px] uppercase tracking-wider px-2 py-1 bg-[#181818] text-warm-white/25 shrink-0"
+                        className="font-mono text-[9px] uppercase tracking-wider px-2 py-1 bg-[#181818] text-warm-white/50 shrink-0"
                       >
                         {tech}
                       </span>
@@ -447,7 +447,7 @@ const ProjectShowcase = () => {
                             href={project.code}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-mono text-[10px] uppercase tracking-wider px-4 py-2 border border-[#2a2a2a] text-warm-white/35 hover:border-[#3a3a3a] hover:text-warm-white/60 transition-all duration-200"
+                            className="font-mono text-[10px] uppercase tracking-wider px-4 py-2 border border-[#2a2a2a] text-warm-white/55 hover:border-[#3a3a3a] hover:text-warm-white/80 transition-all duration-200"
                           >
                             Code
                           </a>
@@ -466,7 +466,7 @@ const ProjectShowcase = () => {
               className={`flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest transition-all duration-200 ${
                 currentPage === 0
                   ? "text-warm-white/15 cursor-not-allowed"
-                  : "text-warm-white/40 hover:text-gold cursor-pointer"
+                  : "text-warm-white/60 hover:text-gold cursor-pointer"
               }`}
               onClick={() => handlePageChange(-1)}
               disabled={currentPage === 0}
@@ -482,7 +482,7 @@ const ProjectShowcase = () => {
               className={`flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest transition-all duration-200 ${
                 currentPage >= totalPages - 1
                   ? "text-warm-white/15 cursor-not-allowed"
-                  : "text-warm-white/40 hover:text-gold cursor-pointer"
+                  : "text-warm-white/60 hover:text-gold cursor-pointer"
               }`}
               onClick={() => handlePageChange(1)}
               disabled={currentPage >= totalPages - 1}
@@ -569,7 +569,7 @@ const ProjectShowcase = () => {
                 {selectedProject.description && (
                   <div className="mb-7">
                     <span className="section-eyebrow mb-3">About</span>
-                    <p className="text-warm-white/50 leading-relaxed text-sm">
+                    <p className="text-warm-white/75 leading-relaxed text-sm">
                       {selectedProject.description}
                     </p>
                   </div>
@@ -582,7 +582,7 @@ const ProjectShowcase = () => {
                     {selectedProject.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="font-mono text-[10px] uppercase tracking-wider px-3 py-1.5 border border-[#2a2a2a] text-warm-white/40"
+                        className="font-mono text-[10px] uppercase tracking-wider px-3 py-1.5 border border-[#2a2a2a] text-warm-white/65"
                       >
                         {tech}
                       </span>
@@ -607,7 +607,7 @@ const ProjectShowcase = () => {
                       href={selectedProject.code}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 min-w-[120px] text-center font-mono text-[11px] uppercase tracking-widest px-6 py-3 border border-[#2a2a2a] text-warm-white/40 hover:border-[#3a3a3a] hover:text-warm-white/70 transition-all duration-300"
+                      className="flex-1 min-w-[120px] text-center font-mono text-[11px] uppercase tracking-widest px-6 py-3 border border-[#2a2a2a] text-warm-white/60 hover:border-[#3a3a3a] hover:text-warm-white/85 transition-all duration-300"
                     >
                       View Code
                     </a>

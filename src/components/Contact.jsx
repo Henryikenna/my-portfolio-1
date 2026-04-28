@@ -163,7 +163,7 @@ const Contact = () => {
                       download={download}
                       target="_blank"
                       rel="noreferrer"
-                      className="group flex items-center gap-4 text-warm-white/35 hover:text-gold transition-colors duration-300"
+                      className="group flex items-center gap-4 text-warm-white/60 hover:text-gold transition-colors duration-300"
                     >
                       <span className="shrink-0">{icon}</span>
                       <span className="font-mono text-xs uppercase tracking-wider group-hover:translate-x-1 transition-transform duration-300">

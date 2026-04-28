@@ -55,7 +55,7 @@ const Technologies = () => {
             <span className="section-eyebrow mb-3">// 03 — stack</span>
             <h2 className="font-display text-4xl md:text-5xl text-warm-white">Technologies</h2>
             <span className="gold-line mt-4 max-w-xs block" />
-            <p className="text-warm-white/40 text-sm mt-4 max-w-lg">
+            <p className="text-warm-white/60 text-sm mt-4 max-w-lg">
               Tools and frameworks I use to build production-grade applications.
             </p>
           </div>
@@ -66,7 +66,7 @@ const Technologies = () => {
             <FadeInSection key={group.category} delay={gi * 100}>
               <div>
                 <div className="flex items-center gap-4 mb-6">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-warm-white/25">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-warm-white/45">
                     {group.category}
                   </span>
                   <span className="flex-1 h-px bg-[#1e1e1e]" />
@@ -83,7 +83,7 @@ const Technologies = () => {
                         className={`absolute top-0 right-0 font-mono text-[8px] uppercase tracking-wider px-2 py-0.5 ${
                           level === "Advanced"
                             ? "bg-gold/10 text-gold/70"
-                            : "bg-[#1e1e1e] text-warm-white/25"
+                            : "bg-[#1e1e1e] text-warm-white/50"
                         }`}
                       >
                         {level}
@@ -94,7 +94,7 @@ const Technologies = () => {
                         alt={name}
                         className="w-9 h-9 object-contain group-hover:scale-110 transition-transform duration-300 mt-2"
                       />
-                      <span className="font-mono text-[11px] text-warm-white/50 group-hover:text-warm-white/80 transition-colors duration-300 text-center">
+                      <span className="font-mono text-[11px] text-warm-white/70 group-hover:text-warm-white/90 transition-colors duration-300 text-center">
                         {name}
                       </span>
                     </div>

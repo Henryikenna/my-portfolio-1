@@ -65,7 +65,7 @@ const Home = () => {
 
           <div className="gold-line w-24 my-5" />
 
-          <p className="text-warm-white/40 text-sm md:text-base max-w-sm leading-relaxed mb-8">
+          <p className="text-warm-white/65 text-sm md:text-base max-w-sm leading-relaxed mb-8">
             Building web & mobile frontends that are fast, precise, and remembered.
           </p>
 
@@ -120,7 +120,7 @@ const Home = () => {
               }`}
             >
               <span className="font-display text-2xl text-gold">{stat.value}</span>
-              <span className="font-mono text-[9px] uppercase tracking-widest text-warm-white/25 mt-1">
+              <span className="font-mono text-[9px] uppercase tracking-widest text-warm-white/45 mt-1">
                 {stat.label}
               </span>
             </div>

@@ -56,7 +56,7 @@ const SocialLinks = () => {
             className={`flex justify-between items-center w-36 h-11 px-4 ml-[-104px] bg-[#0e0e0e] border border-[#222] border-r-0 cursor-pointer hover:ml-[-4px] transition-all duration-300 hover:bg-surface-2 ${style || ""}`}
           >
             <a
-              className="flex justify-between items-center w-full text-warm-white/30 hover:text-gold transition-colors duration-300"
+              className="flex justify-between items-center w-full text-warm-white/55 hover:text-gold transition-colors duration-300"
               href={href}
               download={download}
               target="_blank"
