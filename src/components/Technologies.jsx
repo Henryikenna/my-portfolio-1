@@ -13,162 +13,97 @@ import firebase from "../assets/firebase.png";
 import rive from "../assets/rive.png";
 
 const Technologies = () => {
-  const techs = [
+  const groups = [
     {
-      id: 1,
-      src: html,
-      name: "HTML",
-      style: "shadow-orange-500",
-      level: "Advanced",
+      category: "Web",
+      techs: [
+        { id: 1, src: html, name: "HTML", level: "Advanced" },
+        { id: 2, src: css, name: "CSS", level: "Advanced" },
+        { id: 3, src: javascript, name: "JavaScript", level: "Advanced" },
+        { id: 4, src: reactImage, name: "React", level: "Advanced" },
+        { id: 5, src: tailwind, name: "Tailwind CSS", level: "Advanced" },
+        { id: 6, src: nextjs, name: "Next.js", level: "Intermediate" },
+      ],
     },
     {
-      id: 2,
-      src: css,
-      name: "CSS",
-      style: "shadow-blue-500",
-      level: "Advanced",
+      category: "Mobile",
+      techs: [
+        { id: 7, src: dart, name: "Dart", level: "Advanced" },
+        { id: 9, src: flutter, name: "Flutter", level: "Advanced" },
+      ],
     },
     {
-      id: 3,
-      src: javascript,
-      name: "JavaScript",
-      style: "shadow-yellow-500",
-      level: "Advanced",
-    },
-    {
-      id: 4,
-      src: reactImage,
-      name: "React",
-      style: "shadow-blue-600",
-      level: "Advanced",
-    },
-    {
-      id: 5,
-      src: tailwind,
-      name: "Tailwind CSS",
-      style: "shadow-sky-400",
-      level: "Advanced",
-    },
-    {
-      id: 6,
-      src: nextjs,
-      name: "Next JS",
-      style: "shadow-white",
-      level: "Intermediate",
-    },
-    {
-      id: 7,
-      src: dart,
-      name: "Dart",
-      style: "shadow-[#00C4B3]",
-      level: "Advanced",
-    },
-    {
-      id: 8,
-      src: github,
-      name: "GitHub",
-      style: "shadow-gray-400",
-      level: "Advanced",
-    },
-    {
-      id: 9,
-      src: flutter,
-      name: "Flutter",
-      style: "shadow-[#00B5F8]",
-      level: "Advanced",
-    },
-    {
-      id: 10,
-      src: firebase,
-      name: "Firebase",
-      style: "shadow-[#FFA000]",
-      level: "Intermediate",
-    },
-    {
-      id: 11,
-      src: rive,
-      name: "Rive",
-      style: "shadow-gray-100",
-      level: "Intermediate",
+      category: "Tools & Services",
+      techs: [
+        { id: 10, src: firebase, name: "Firebase", level: "Intermediate" },
+        { id: 8, src: github, name: "GitHub", level: "Advanced" },
+        { id: 11, src: rive, name: "Rive", level: "Intermediate" },
+      ],
     },
   ];
 
   return (
     <div
       name="technologies"
-      className="w-full min-h-screen bg-gradient-to-b from-gray-800 via-gray-950 to-black py-16"
+      className="relative w-full min-h-screen bg-ink py-24 md:py-32 overflow-hidden"
     >
-      <div className="max-w-screen-lg mx-auto p-4">
+      <span className="section-bg-number">03</span>
+
+      <div className="max-w-screen-lg mx-auto px-6 md:px-8">
         <FadeInSection>
-          <div className="text-white">
-            <h2 className="text-4xl font-bold inline border-b-4 border-gray-500">
-              Technologies
-            </h2>
-            <p className="py-4 md:py-6">Proficient in modern development tools and frameworks with proven production experience</p>
+          <div className="mb-14">
+            <span className="section-eyebrow mb-3">// 03 — stack</span>
+            <h2 className="font-display text-4xl md:text-5xl text-warm-white">Technologies</h2>
+            <span className="gold-line mt-4 max-w-xs block" />
+            <p className="text-warm-white/40 text-sm mt-4 max-w-lg">
+              Tools and frameworks I use to build production-grade applications.
+            </p>
           </div>
         </FadeInSection>
 
-        {/* Desktop Grid */}
-        <FadeInSection delay={100}>
-          <div className="hidden md:grid grid-cols-3 lg:grid-cols-4 gap-4 text-white">
-            {techs.map(({ id, src, name, style, level }) => (
-              <div
-                key={id}
-                className={`group relative bg-gray-800 rounded-lg hover:bg-gray-700
-                  transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl ${style}`}
-              >
-                <div className="flex justify-between">
-                  <span></span>
-                <span className="px-3 py-1 text-sm font-medium bg-[#7F1F9A] rounded-bl-md rounded-tr-lg">
-                    {level}
+        <div className="space-y-12">
+          {groups.map((group, gi) => (
+            <FadeInSection key={group.category} delay={gi * 100}>
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-warm-white/25">
+                    {group.category}
                   </span>
+                  <span className="flex-1 h-px bg-[#1e1e1e]" />
                 </div>
-                <div className="flex flex-col items-center p-6">
-                  <img
-                    src={src}
-                    alt={name}
-                    className="w-16 mb-4 transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <h3 className="text-lg font-semibold">{name}</h3>
-                  {/* <span className="px-3 py-1 text-sm bg-[#7F1F9A] rounded-full opacity-0
-                    group-hover:opacity-100 transition-opacity duration-300">
-                    {level}
-                  </span> */}
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                  {group.techs.map(({ id, src, name, level }) => (
+                    <div
+                      key={id}
+                      className="group relative bg-surface border border-[#1e1e1e] hover:border-gold/30 transition-all duration-300 p-4 flex flex-col items-center gap-3 cursor-default"
+                    >
+                      {/* Level badge */}
+                      <span
+                        className={`absolute top-0 right-0 font-mono text-[8px] uppercase tracking-wider px-2 py-0.5 ${
+                          level === "Advanced"
+                            ? "bg-gold/10 text-gold/70"
+                            : "bg-[#1e1e1e] text-warm-white/25"
+                        }`}
+                      >
+                        {level}
+                      </span>
+
+                      <img
+                        src={src}
+                        alt={name}
+                        className="w-9 h-9 object-contain group-hover:scale-110 transition-transform duration-300 mt-2"
+                      />
+                      <span className="font-mono text-[11px] text-warm-white/50 group-hover:text-warm-white/80 transition-colors duration-300 text-center">
+                        {name}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
-        </FadeInSection>
-
-        {/* Mobile Carousel */}
-        <FadeInSection delay={100}>
-          <div className="md:hidden">
-            {/* <div className="flex gap-6 overflow-x-auto custom-scrollbar pb-6"> */}
-            <div className="grid grid-cols-2 gap-6 pb-6">
-              {techs.map(({ id, src, name, style, level }) => (
-                <div
-                  key={id}
-                  // className={`flex-shrink-0 w-48 bg-gray-800 rounded-lg ${style}`}
-                  className={`flex-shrink-0 w-auto bg-gray-800 rounded-lg ${style}`}
-                >
-                  <div className="flex justify-between">
-                  <span></span>
-                <span className="px-3 py-1 text-sm font-medium text-white bg-[#7F1F9A] rounded-bl-md rounded-tr-lg">
-                    {level}
-                  </span>
-                </div>
-                  <div className="flex flex-col items-center p-3">
-                    <img src={src} alt={name} className="w-11 mb-3" />
-                    <h3 className="text-white text-lg font-semibold mb-2">{name}</h3>
-                    {/* <span className="px-3 py-1 text-sm text-white bg-[#7F1F9A] rounded-full">
-                      {level}
-                    </span> */}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </FadeInSection>
+            </FadeInSection>
+          ))}
+        </div>
       </div>
     </div>
   );

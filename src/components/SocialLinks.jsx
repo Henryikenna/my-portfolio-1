@@ -8,81 +8,62 @@ const SocialLinks = () => {
   const links = [
     {
       id: 1,
-      child: (
-        <>
-          WhatsApp <FaWhatsapp size={27} />
-        </>
-      ),
+      label: "WhatsApp",
+      icon: <FaWhatsapp size={15} />,
       href: "https://wa.me/+23409063203950",
-      style: "rounded-tr-md",
+      style: "rounded-tr-sm",
     },
     {
       id: 2,
-      child: (
-        <>
-          LinkedIn <FaLinkedin size={27} />
-        </>
-      ),
-      href: "https://www.linkedin.com/in/henry-unegbu-832838254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      // style: "rounded-tr-md",
+      label: "LinkedIn",
+      icon: <FaLinkedin size={15} />,
+      href: "https://www.linkedin.com/in/henry-unegbu-832838254",
     },
     {
       id: 3,
-      child: (
-        <>
-          Github <FaGithub size={27} />
-        </>
-      ),
+      label: "GitHub",
+      icon: <FaGithub size={15} />,
       href: "https://github.com/Henryikenna",
     },
     {
       id: 4,
-      child: (
-        <>
-          Twitter/X <FaXTwitter size={27} />
-        </>
-      ),
+      label: "Twitter/X",
+      icon: <FaXTwitter size={15} />,
       href: "https://x.com/henryoncode",
     },
     {
       id: 5,
-      child: (
-        <>
-          E-mail <HiOutlineMail size={27} />
-        </>
-      ),
+      label: "Email",
+      icon: <HiOutlineMail size={15} />,
       href: "mailto:ikennaunegbu10@gmail.com",
     },
     {
       id: 6,
-      child: (
-        <>
-          Resume <BsFillPersonLinesFill size={27} />
-        </>
-      ),
+      label: "Resume",
+      icon: <BsFillPersonLinesFill size={15} />,
       href: "/resume.pdf",
-      style: "rounded-br-md",
+      style: "rounded-br-sm",
       download: true,
     },
   ];
 
   return (
-    <div className="hidden md:flex flex-col top-[35%] left-0 fixed z-50">
-      <ul className="">
-        {links.map(({id, child, href, style, download}) => (
+    <div className="hidden md:flex flex-col top-[35%] left-0 fixed z-40">
+      <ul>
+        {links.map(({ id, label, icon, href, style, download }) => (
           <li
             key={id}
-            className={
-              "flex justify-between items-center w-40 h-14 px-4 ml-[-100px] bg-[#7F1F9A] bg-opacity-70 cursor-pointer hover:ml-[-5px] hover:rounded-md hover:shadow-lg hover:bg-opacity-100 transition-all duration-300" +
-              " " +
-              style
-            }
+            className={`flex justify-between items-center w-36 h-11 px-4 ml-[-104px] bg-[#0e0e0e] border border-[#222] border-r-0 cursor-pointer hover:ml-[-4px] transition-all duration-300 hover:bg-surface-2 ${style || ""}`}
           >
             <a
-              className="flex justify-between items-center w-full text-white hover:scale-105 transition-transform duration-300"
-              href={href} download={download} target="_blank" rel="noreferrer"
+              className="flex justify-between items-center w-full text-warm-white/30 hover:text-gold transition-colors duration-300"
+              href={href}
+              download={download}
+              target="_blank"
+              rel="noreferrer"
             >
-              {child}
+              <span className="font-mono text-[10px] uppercase tracking-widest">{label}</span>
+              {icon}
             </a>
           </li>
         ))}

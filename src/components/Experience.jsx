@@ -1,97 +1,112 @@
 import React, { useState } from "react";
-import { LuChevronRight } from "react-icons/lu";
+import { LuChevronDown } from "react-icons/lu";
 import FadeInSection from "./FadeInSection";
 
 const Experience = () => {
-  const [openItems, setOpenItems] = useState({});
+  const [openItems, setOpenItems] = useState({ 0: true });
 
   const toggleItem = (id) => {
-    setOpenItems((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
+    setOpenItems((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   const experiences = [
     {
+      id: 0,
+      role: "Flutter Mobile App Developer",
+      company: "Edgo",
+      companyUrl: "https://edgo.co",
+      isCurrent: true,
+      jobRoles: [
+        "Developing and maintaining cross-platform mobile applications using Flutter and Dart for Edgo's growing platform.",
+        "Building pixel-perfect, performant UI components from design specs, ensuring consistency across Android and iOS.",
+        "Integrating RESTful APIs and implementing state management solutions to deliver new features on schedule.",
+      ],
+    },
+    {
       id: 1,
       role: "Senior Developer",
       company: "Psilocybin",
+      isCurrent: false,
       jobRoles: [
         "Architected and deployed NaijaBarter, a Flutter-based barter trading platform enabling cashless peer-to-peer exchanges, serving a growing user base with zero transaction fees.",
-        "Engineered secure authentication infrastructure using Firebase Authentication, ensuring data privacy compliance and seamless user onboarding experience.",
+        "Engineered secure authentication infrastructure using Firebase Authentication, ensuring data privacy compliance and seamless user onboarding.",
         "Developed real-time chat system with Firebase Cloud Messaging, reducing communication latency by 85% and improving user engagement metrics.",
         "Implemented targeted push notification system that increased user retention by 40% through timely trade alerts and platform updates.",
         "Optimized data architecture with Cloud Firestore, achieving sub-100ms query response times and real-time synchronization across devices.",
-        "Established scalable state management solution using Riverpod, reducing code complexity by 30% and improving app performance benchmarks.",
+        "Established scalable state management using Riverpod, reducing code complexity by 30% and improving performance benchmarks.",
       ],
     },
     {
       id: 2,
-      role: "Mobile Developer (Team Demerzel)",
-      company: "HNG-X (2023)",
+      role: "Frontend Developer",
+      company: "Case Radar",
+      isCurrent: false,
       jobRoles: [
-        "Delivered multiple production-grade mobile applications within accelerated timelines while maintaining 95%+ code quality standards and zero critical bugs.",
-        "Collaborated in cross-functional teams of 5-8 members, coordinating with designers and backend engineers to align technical implementation with business requirements.",
-        "Implemented Agile/Scrum methodologies with bi-weekly sprints, contributing to 98% on-time delivery rate across all assigned milestones.",
-        "Established Git workflow best practices and participated in code review processes, reducing merge conflicts by 60% and improving team velocity.",
-        "Successfully completed 5 milestone projects demonstrating proficiency in Flutter, API integration, and responsive UI development.",
+        "Developed comprehensive frontend architecture for AI-powered legal research platform serving 5,000+ users and 1,000+ Play Store downloads.",
+        "Built responsive web application using React and TailwindCSS, delivering optimized UX for legal professionals and clients seeking attorney services.",
+        "Engineered Flutter-based mobile application for iOS and Android with intelligent case matching and real-time lawyer discovery.",
+        "Collaborated with AI/ML team to integrate legal research capabilities into user-facing interfaces.",
+        "Optimized application performance achieving sub-2-second page load times and offline-first architecture for mobile.",
       ],
     },
     {
       id: 3,
-      role: "Junior Flutter Developer",
-      company: "Attainbase ERP",
+      role: "Founder & Lead Developer",
+      company: "Segwae (Startup)",
+      isCurrent: false,
       jobRoles: [
-        "Developed comprehensive ERP mobile application using Flutter and Isar database, enabling offline-first functionality for businesses with intermittent connectivity.",
-        "Implemented inventory tracking, employee management, and automated reporting features, reducing manual data entry time by 70% for client businesses.",
-        "Integrated Riverpod state management to ensure efficient data flow and maintain application performance across complex business workflows.",
+        "Founded and architected innovative digital networking platform combining software and hardware — NFC/QR business card integration.",
+        "Led full-stack development of cross-platform mobile app (Flutter) and web platform (Next.js) enabling users to manage shareable digital profiles.",
+        "Engineered seamless integration between physical NFC/QR business cards and cloud-based profile system.",
+        "Implemented Supabase backend for real-time profile synchronization, user authentication, and analytics across web and mobile.",
+        "Designed and executed go-to-market strategy, overseeing product development from concept to launch.",
       ],
     },
     {
       id: 4,
       role: "Senior Flutter Developer",
       company: "KekeDrop",
+      isCurrent: false,
       jobRoles: [
-        "Built production-ready ride-hailing application with real-time GPS tracking, Google Maps integration, and secure payment gateway, processing 500+ daily ride requests.",
-        "Engineered intelligent driver-passenger matching algorithm, reducing average wait times by 35% and improving customer satisfaction scores.",
-        "Developed dual-platform solution with separate passenger and driver applications, maintaining feature parity and consistent user experience across both interfaces.",
-        "Implemented comprehensive ride history and analytics dashboard, providing users with detailed trip insights and expense tracking capabilities.",
+        "Built production-ready ride-hailing app with real-time GPS tracking, Google Maps integration, and secure payment gateway processing 500+ daily rides.",
+        "Engineered intelligent driver-passenger matching algorithm, reducing average wait times by 35%.",
+        "Developed dual-platform solution — separate passenger and driver applications — maintaining feature parity across both interfaces.",
+        "Implemented comprehensive ride history and analytics dashboard with trip insights and expense tracking.",
       ],
     },
     {
       id: 5,
-      role: "Founder & Lead Developer",
-      company: "Segwae (Startup)",
+      role: "Mobile Developer (Team Demerzel)",
+      company: "HNG-X (2023)",
+      isCurrent: false,
       jobRoles: [
-        "Founded and architected innovative digital networking platform combining software and hardware solutions, securing initial market traction with unique NFC/QR business card integration.",
-        "Led full-stack development of cross-platform mobile application using Flutter and web platform using Next.js, enabling users to create shareable digital profiles and manage social media presence.",
-        "Engineered seamless integration between physical NFC/QR business cards and cloud-based profile system, delivering instant digital networking capabilities.",
-        "Implemented Supabase backend infrastructure for real-time profile synchronization, user authentication, and analytics tracking across web and mobile platforms.",
-        "Designed and executed go-to-market strategy, overseeing product development from concept to launch while balancing technical leadership with business development.",
+        "Delivered multiple production-grade mobile applications within accelerated timelines, maintaining 95%+ code quality and zero critical bugs.",
+        "Collaborated in cross-functional teams of 5–8, coordinating with designers and backend engineers across milestones.",
+        "Implemented Agile/Scrum methodologies with bi-weekly sprints, contributing to 98% on-time delivery rate.",
+        "Established Git workflow best practices, reducing merge conflicts by 60% and improving team velocity.",
       ],
     },
     {
       id: 6,
-      role: "Frontend Developer",
-      company: "Case Radar",
+      role: "Junior Flutter Developer",
+      company: "Attainbase ERP",
+      isCurrent: false,
       jobRoles: [
-        "Developed comprehensive frontend architecture for AI-powered legal research platform serving 5,000+ users currently and 1,000+ downloads on Google Playstore.",
-        "Built responsive web application using React and TailwindCSS, delivering optimized user experience for legal professionals and clients seeking attorney services.",
-        "Engineered Flutter-based mobile application for iOS and Android, implementing intelligent case matching algorithms and real-time lawyer discovery features.",
-        "Collaborated with AI/ML team to integrate legal research capabilities into user-facing interfaces, ensuring seamless interaction with backend intelligence systems.",
-        "Optimized application performance achieving sub-2-second page load times and implementing offline-first architecture for mobile platform.",
+        "Developed comprehensive ERP mobile app using Flutter and Isar database, enabling offline-first functionality for businesses with intermittent connectivity.",
+        "Implemented inventory tracking, employee management, and automated reporting — reducing manual data entry time by 70%.",
+        "Integrated Riverpod state management to ensure efficient data flow across complex business workflows.",
       ],
     },
     {
       id: 7,
       role: "Web Developer",
       company: "WebDerk",
+      isCurrent: false,
       jobRoles: [
-        "Developed e-commerce platform specializing in digital subscription services, implementing secure payment processing and automated digital product delivery systems.",
-        "Built user-friendly interface using React and TailwindCSS, optimizing conversion rates through streamlined checkout flows and intuitive subscription management.",
-        "Integrated Paystack & Monnify and subscription management APIs, ensuring reliable transaction processing and automated renewal handling.",
-        "Implemented comprehensive admin dashboard for inventory management, sales analytics, and customer relationship tracking.",
+        "Developed e-commerce platform for digital subscription services with secure payment processing and automated delivery systems.",
+        "Built user-friendly interface using React and TailwindCSS, optimizing conversion through streamlined checkout and subscription management.",
+        "Integrated Paystack & Monnify APIs for reliable transaction processing and automated renewal handling.",
+        "Implemented admin dashboard for inventory management, sales analytics, and customer relationship tracking.",
       ],
     },
   ];
@@ -99,59 +114,82 @@ const Experience = () => {
   return (
     <div
       name="experience"
-      className="w-full min-h-screen bg-gradient-to-b from-black via-gray-950 to-gray-800 py-16"
+      className="relative w-full min-h-screen bg-surface/30 py-24 md:py-32 overflow-hidden"
     >
-      <div className="max-w-screen-lg mx-auto p-4">
+      <span className="section-bg-number">04</span>
+
+      <div className="max-w-screen-lg mx-auto px-6 md:px-8">
         <FadeInSection>
-          <div className="text-white">
-            <h2 className="text-4xl font-bold inline border-b-4 border-gray-500">
-              Experience
-            </h2>
-            <p className="py-4 md:py-6">Professional journey delivering impactful solutions across diverse industries</p>
+          <div className="mb-14">
+            <span className="section-eyebrow mb-3">// 04 — journey</span>
+            <h2 className="font-display text-4xl md:text-5xl text-warm-white">Experience</h2>
+            <span className="gold-line mt-4 max-w-xs block" />
+            <p className="text-warm-white/40 text-sm mt-4 max-w-lg">
+              Professional journey delivering impactful solutions across diverse industries.
+            </p>
           </div>
         </FadeInSection>
-        <FadeInSection delay={100}>
-          {experiences
-            .map((experience) => (
-              <div key={experience.id} className="mb-4">
-              {/* Collapsed view */}
-              <div
-                className={`flex justify-between items-center p-4 bg-gray-700 cursor-pointer hover:bg-gray-600 transition-all duration-300 shadow-md hover:shadow-lg ${
-                  openItems[experience.id] ? "rounded-t-md" : "rounded-md"
-                }`}
-                onClick={() => toggleItem(experience.id)}
-              >
-                <div className="flex flex-col">
-                  <span className="font-semibold text-white">
-                    {experience.role}
-                  </span>
-                  <span className="text-sm text-gray-300 mt-1">
-                    {experience.company}
-                  </span>
-                </div>
-                <span
-                  className={`transform transition-transform duration-300 text-white text-lg ${
-                    openItems[experience.id] ? "rotate-90" : "rotate-0"
-                  }`}
-                >
-                  <LuChevronRight />
-                </span>
-              </div>
 
-              {/* Expanded view */}
-              {openItems[experience.id] && (
-                <ul className="p-4 pl-8 flex flex-col gap-2 bg-gray-800 rounded-b-md shadow-inner">
-                  {experience.jobRoles.map((role, index) => (
-                    <li key={index} className="list-disc text-gray-300 leading-relaxed">
-                      {role}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))
-          .reverse()
-          }
+        <FadeInSection delay={100}>
+          <div className="space-y-2">
+            {experiences.map((exp, index) => (
+              <div key={exp.id} className="border border-[#1e1e1e] hover:border-[#2a2a2a] transition-colors duration-300">
+                {/* Header */}
+                <button
+                  className="w-full flex justify-between items-center px-5 py-4 md:px-6 md:py-5 text-left group"
+                  onClick={() => toggleItem(exp.id)}
+                >
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <span className="font-display text-lg md:text-xl text-warm-white/80 group-hover:text-warm-white transition-colors duration-200">
+                        {exp.role}
+                      </span>
+                      {exp.isCurrent && (
+                        <span className="font-mono text-[9px] uppercase tracking-widest text-ink bg-gold px-2 py-0.5">
+                          Current
+                        </span>
+                      )}
+                    </div>
+                    <span className="font-mono text-[11px] uppercase tracking-widest text-gold/60">
+                      {exp.companyUrl ? (
+                        <a
+                          href={exp.companyUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="hover:text-gold transition-colors duration-200"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {exp.company}
+                        </a>
+                      ) : (
+                        exp.company
+                      )}
+                    </span>
+                  </div>
+                  <LuChevronDown
+                    className={`text-warm-white/25 shrink-0 ml-4 transition-transform duration-300 ${
+                      openItems[exp.id] ? "rotate-180" : "rotate-0"
+                    }`}
+                    size={18}
+                  />
+                </button>
+
+                {/* Expanded content */}
+                {openItems[exp.id] && (
+                  <div className="px-5 pb-5 md:px-6 md:pb-6 border-t border-[#1a1a1a]">
+                    <ul className="mt-4 space-y-3">
+                      {exp.jobRoles.map((role, i) => (
+                        <li key={i} className="flex gap-3 text-warm-white/45 text-sm leading-relaxed">
+                          <span className="text-gold/40 mt-1.5 shrink-0">—</span>
+                          <span>{role}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </FadeInSection>
       </div>
     </div>

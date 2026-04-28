@@ -6,15 +6,19 @@ const Portfolio = () => {
   return (
     <div
       name="portfolio"
-      className=" bg-gradient-to-b from-[#151515] via-gray-950 to-gray-800 w-full text-white md:min-h-dvh py-16"
+      className="relative w-full bg-surface/30 py-24 md:py-32 overflow-hidden"
     >
-      <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
+      <span className="section-bg-number">02</span>
+
+      <div className="max-w-screen-xl mx-auto px-6 md:px-8">
         <FadeInSection>
-          <div className=" pb-5 md:pb-8">
-            <p className=" text-4xl font-bold inline border-b-4 border-gray-500">
-              Portfolio
+          <div className="mb-14">
+            <span className="section-eyebrow mb-3">// 02 — work</span>
+            <h2 className="font-display text-4xl md:text-5xl text-warm-white">Portfolio</h2>
+            <span className="gold-line mt-4 max-w-xs block" />
+            <p className="text-warm-white/40 text-sm mt-4 max-w-lg">
+              A selection of projects spanning web, mobile, and design, built for real users.
             </p>
-            <p className=" pt-3 md:pt-6">Explore a selection of projects demonstrating technical expertise across web, mobile, and design disciplines</p>
           </div>
         </FadeInSection>
 

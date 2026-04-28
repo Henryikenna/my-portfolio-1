@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { TbExternalLink } from "react-icons/tb";
 import { IoMdClose } from "react-icons/io";
+import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import amiriCar from "../assets/portfolio/amiriCar.jpeg";
 import anirivic from "../assets/portfolio/anirivic.jpeg";
 import zws from "../assets/portfolio/zws.jpeg";
@@ -24,6 +25,7 @@ import segwaeApp from "../assets/portfolio/segwaeApp.jpg";
 import webDerk from "../assets/portfolio/webDerk.png";
 import grammar234 from "../assets/portfolio/grammar234.png";
 import screenguard from "../assets/portfolio/screenguard.jpg";
+import chip from "../assets/portfolio/chip.png";
 
 const ProjectShowcase = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -34,7 +36,6 @@ const ProjectShowcase = () => {
 
   const cardRefs = useRef([]);
 
-  // Animate panel in after it mounts
   useEffect(() => {
     if (selectedProject) {
       requestAnimationFrame(() => setIsPanelVisible(true));
@@ -51,7 +52,8 @@ const ProjectShowcase = () => {
       id: 101,
       title: "Case Radar",
       type: "web",
-      description: "AI-powered legal research platform connecting clients with qualified attorneys. Developed comprehensive frontend architecture for web and mobile applications, serving 1,000+ downloads with intelligent case matching and lawyer discovery features.",
+      description:
+        "AI-powered legal research platform connecting clients with qualified attorneys. Developed comprehensive frontend architecture for web and mobile, serving 1,000+ downloads with intelligent case matching and lawyer discovery.",
       technologies: ["React", "TailwindCSS"],
       image: caseradar,
       demo: "https://caseradar.ai/",
@@ -62,7 +64,8 @@ const ProjectShowcase = () => {
       title: "ScreenGuard",
       type: "mobile",
       isPersonal: true,
-      description: "Android utility app that places a translucent, touch-proof overlay over your screen so audio and video keep playing uninterrupted — no accidental taps from pockets or bags. Unlock with a U-shape swipe gesture or emergency 20-tap exit. No background processes, no data collection, no internet required, and no ads.",
+      description:
+        "Android utility app that places a translucent, touch-proof overlay over your screen so audio and video keep playing uninterrupted — no accidental taps from pockets or bags. Unlock with a U-shape swipe gesture. No background processes, no data collection, no internet required.",
       technologies: ["Flutter", "Dart"],
       image: screenguard,
       demo: "https://play.google.com/store/apps/details?id=com.screenguard.app",
@@ -72,7 +75,8 @@ const ProjectShowcase = () => {
       id: 102,
       title: "Case Radar Mobile",
       type: "mobile",
-      description: "Mobile companion to Case Radar's legal platform, bringing AI-powered legal research and attorney connections to iOS and Android. Implements responsive UI with seamless synchronization and offline capabilities for legal professionals on the go.",
+      description:
+        "Mobile companion to Case Radar's legal platform, bringing AI-powered legal research and attorney connections to iOS and Android. Implements responsive UI with seamless synchronization and offline capabilities.",
       technologies: ["Flutter", "Dart"],
       image: caseradarMobile,
       demo: "https://play.google.com/store/apps/details?id=ai.caseradar.app",
@@ -83,10 +87,23 @@ const ProjectShowcase = () => {
       title: "Segwae",
       type: "mobile",
       isStartup: true,
-      description: "Founded innovative digital networking solution combining software and hardware. Platform enables users to create shareable web profiles and manage social media presence, integrated with custom NFC/QR business cards for seamless professional networking.",
+      description:
+        "Founded innovative digital networking solution combining software and hardware. Platform enables users to create shareable web profiles and manage social media presence, integrated with custom NFC/QR business cards.",
       technologies: ["Flutter", "Next.js", "Supabase", "NFC Technology"],
       image: segwaeApp,
       demo: "https://segwae.com",
+      code: "",
+    },
+    {
+      id: 200,
+      title: "Chess in Public",
+      type: "web",
+      isStartup: true,
+      description:
+        "A platform bringing chess culture into everyday public life — making the game accessible, social, and engaging for players of all skill levels. Features tools for connecting local players.",
+      technologies: ["Next.js", "TailwindCSS", "Supabase"],
+      image: chip,
+      demo: "https://chessinpublic.com",
       code: "",
     },
     {
@@ -94,8 +111,9 @@ const ProjectShowcase = () => {
       title: "234Grammar",
       type: "web",
       isStartup: true,
-      description: "Culturally-aware grammar and style checker built for Nigerian and West African English. Supports Nigerian English, Standard English, and Pidgin — validating expressions that standard grammar tools incorrectly flag as errors. Features cloud sync, document history, multi-format export (PDF, DOCX, TXT), and flexible Naira-based pricing.",
-      technologies: ["Next.js", "TailwindCSS", "Supabase", "Resend"],
+      description:
+        "Culturally-aware grammar and style checker built for Nigerian and West African English. Supports Nigerian English, Standard English, and Pidgin — validating expressions that standard tools incorrectly flag. Features cloud sync, document history, multi-format export, and Naira-based pricing.",
+      technologies: ["Next.js", "TailwindCSS", "Supabase"],
       image: grammar234,
       demo: "https://234grammar.com/",
       code: "",
@@ -104,7 +122,8 @@ const ProjectShowcase = () => {
       id: 104,
       title: "WebDerk",
       type: "web",
-      description: "E-commerce platform specializing in digital subscription services across multiple platforms. Developed user-friendly interface with secure payment integration, subscription management, and automated delivery systems for digital products.",
+      description:
+        "E-commerce platform specialising in digital subscription services. Developed user-friendly interface with secure payment integration, subscription management, and automated delivery systems.",
       technologies: ["React", "JavaScript", "TailwindCSS", "Supabase"],
       image: webDerk,
       demo: "https://webderk.org",
@@ -115,7 +134,8 @@ const ProjectShowcase = () => {
       title: "Amari Cars Clone",
       type: "web",
       isPersonal: true,
-      description: "Modern recreation of premium automotive website featuring responsive design and optimized user experience. Demonstrates proficiency in semantic HTML and advanced CSS techniques.",
+      description:
+        "Modern recreation of premium automotive website featuring responsive design and optimised user experience. Demonstrates proficiency in semantic HTML and advanced CSS techniques.",
       technologies: ["HTML", "CSS"],
       image: amiriCar,
       demo: "https://amaricarsclone.vercel.app/",
@@ -129,7 +149,7 @@ const ProjectShowcase = () => {
         "Peer-to-peer trading platform enabling cashless transactions through item exchanges. Features real-time chat, push notifications, and secure authentication serving a growing user community.",
       technologies: ["Flutter", "Dart", "Riverpod"],
       image: nbDemoVideo,
-      demo: "https://drive.google.com/file/d/1SSZISriaTz8daILLb8OvMUxnUu7bUCZr/view?usp=sharing",
+      demo: "https://drive.google.com/file/d/1SSZISriaTz8daILLb8OvMUxnUu7bUCZr/view",
       code: "https://github.com/Henryikenna/naijabarterapp",
     },
     {
@@ -149,7 +169,7 @@ const ProjectShowcase = () => {
       titleAddonURL: "https://x.com/henryoncode/status/1818310259875762461",
       type: "web",
       description:
-        "Cryptocurrency trading platform developed in collaboration with UI/UX designer @markuiux. Features responsive design, real-time market data visualization, and optimized performance for financial transactions.",
+        "Cryptocurrency trading platform developed in collaboration with UI/UX designer @markuiux. Features responsive design, real-time market data visualisation, and optimised performance for financial transactions.",
       technologies: ["React JS", "TailwindCSS", "JavaScript"],
       image: monarc,
       demo: "https://monarc.vercel.app/",
@@ -164,7 +184,7 @@ const ProjectShowcase = () => {
         "AI-powered productivity tool with innovative overlay interface enabling cross-app AI assistance. Integrates OpenAI API with Firebase backend for seamless intelligent functionality accessible from any screen.",
       technologies: ["Flutter", "Dart", "Riverpod", "Firebase", "OpenAI API"],
       image: picoAppReview,
-      demo: "https://www.linkedin.com/posts/henry-unegbu-832838254_flutter-firebase-ugcPost-7254965470720614400-2Nth?utm_source=share&utm_medium=member_desktop",
+      demo: "https://www.linkedin.com/posts/henry-unegbu-832838254_flutter-firebase-ugcPost-7254965470720614400-2Nth",
       code: "https://github.com/Henryikenna/Pico",
     },
     {
@@ -178,10 +198,11 @@ const ProjectShowcase = () => {
     },
     {
       id: 7,
-      title: "Sunlit Carribean Estate",
+      title: "Sunlit Caribbean Estate",
       type: "web",
       isPersonal: true,
-      description: "Luxury vacation rental platform built with Next.js featuring property listings, advanced search filters, and optimized SEO. Delivers fast page loads and seamless booking experience for premium clientele.",
+      description:
+        "Luxury vacation rental platform built with Next.js featuring property listings, advanced search filters, and optimised SEO. Delivers fast page loads and seamless booking experience for premium clientele.",
       technologies: ["Next.js", "TailwindCSS", "TypeScript"],
       image: sunlit,
       demo: "https://sunlit-caribbean-estate.vercel.app/",
@@ -191,19 +212,12 @@ const ProjectShowcase = () => {
       id: 8,
       title: "Eazilink",
       isPersonal: true,
-      titleAddonTitle: "My Eazilink profile",
+      titleAddonTitle: "My profile",
       titleAddonURL: "https://eazilink.com/qr/DHSXENIPnY0s7wVRDnlW",
       type: "mobile",
       description:
         "Professional networking platform consolidating social media profiles with shareable web links and QR codes. Features AI-powered resume analysis using Anthropic API, animated UI with Rive, and Firebase cloud integration.",
-      technologies: [
-        "Flutter",
-        "Dart",
-        "Riverpod",
-        "Firebase",
-        "Rive",
-        "AnthropicAI API",
-      ],
+      technologies: ["Flutter", "Dart", "Riverpod", "Firebase", "Rive", "Anthropic API"],
       image: eazilink,
       demo: "https://drive.google.com/drive/folders/17OpKLL4gizLH9RT9Hx-f8XBiBBlpoAEw",
       code: "https://github.com/Eazi-Link/Eazilink",
@@ -213,8 +227,9 @@ const ProjectShowcase = () => {
       title: "Disney Website Clone",
       type: "web",
       isPersonal: true,
-      description: "Entertainment streaming platform interface recreation featuring dynamic content fetching from TheMovieDB API. Demonstrates advanced React patterns, API integration with Axios, and responsive media-rich layouts.",
-      technologies: ["React JS", "TailwindCSS", "themoviedb API", "Axios"],
+      description:
+        "Entertainment streaming platform interface recreation featuring dynamic content fetching from TheMovieDB API. Demonstrates advanced React patterns, API integration, and responsive media-rich layouts.",
+      technologies: ["React JS", "TailwindCSS", "TheMovieDB API", "Axios"],
       image: disneyClone,
       demo: "https://disney-clone-henryoncode.vercel.app/",
       code: "https://github.com/Henryikenna/disney-clone-react-app",
@@ -225,11 +240,8 @@ const ProjectShowcase = () => {
       type: "mobile",
       isPersonal: true,
       description:
-        "Real estate property discovery application developed with UI/UX designer @Seky_t. Features intuitive property browsing, advanced filters, and optimized mobile performance for seamless real estate exploration.",
-      technologies: [
-        "Flutter",
-        "Dart"
-      ],
+        "Real estate property discovery application developed with UI/UX designer @Seky_t. Features intuitive property browsing, advanced filters, and optimised mobile performance.",
+      technologies: ["Flutter", "Dart"],
       image: propertyPro,
       demo: "https://x.com/henryoncode/status/1740171358213197929",
       code: "https://github.com/Henryikenna/property_pro_app",
@@ -239,7 +251,8 @@ const ProjectShowcase = () => {
       title: "Star Powr",
       type: "web",
       isPersonal: true,
-      description: "Corporate website solution for agencies and businesses featuring modern design, smooth animations, and conversion-optimized layouts. Built with performance and scalability in mind.",
+      description:
+        "Corporate website solution for agencies and businesses featuring modern design, smooth animations, and conversion-optimised layouts. Built with performance and scalability in mind.",
       technologies: ["React JS", "TailwindCSS"],
       image: starPowr,
       demo: "https://star-powr.vercel.app/",
@@ -247,17 +260,14 @@ const ProjectShowcase = () => {
     },
     {
       id: 14,
-      title: "Object Detector with TFlite",
+      title: "Object Detector (TFLite)",
       type: "mobile",
       isPersonal: true,
       description:
-        "Real-time object detection mobile application powered by TensorFlow Lite. Demonstrates machine learning integration in Flutter with camera processing for intelligent object recognition and classification.",
-      technologies: [
-        "Flutter",
-        "Dart", "TensorFlow"
-      ],
+        "Real-time object detection mobile application powered by TensorFlow Lite. Demonstrates machine learning integration in Flutter with camera processing for intelligent object recognition.",
+      technologies: ["Flutter", "Dart", "TensorFlow"],
       image: aiObjectDetector,
-      demo: "https://www.linkedin.com/posts/henry-unegbu-832838254_flutter-tflite-ai-activity-7270122097920671745-zWfB?utm_source=share&utm_medium=member_desktop",
+      demo: "https://www.linkedin.com/posts/henry-unegbu-832838254_flutter-tflite-ai-activity-7270122097920671745-zWfB",
       code: "https://github.com/Henryikenna/TFlite-AI-Object-Detector",
     },
     {
@@ -265,7 +275,8 @@ const ProjectShowcase = () => {
       title: "Aniri Vinchgrine",
       type: "web",
       isPersonal: true,
-      description: "Property listing website showcasing residential real estate with clean, user-friendly interface. Emphasizes visual presentation and easy navigation for property seekers.",
+      description:
+        "Property listing website showcasing residential real estate with a clean, user-friendly interface. Emphasises visual presentation and easy navigation for property seekers.",
       technologies: ["HTML", "CSS"],
       image: anirivic,
       demo: "https://aniri-vinchgrine.vercel.app/",
@@ -275,9 +286,9 @@ const ProjectShowcase = () => {
 
   const projects = {
     all: projectsData,
-    web: projectsData.filter((project) => project.type === "web"),
-    mobile: projectsData.filter((project) => project.type === "mobile"),
-    graphics: projectsData.filter((project) => project.type === "graphics"),
+    web: projectsData.filter((p) => p.type === "web"),
+    mobile: projectsData.filter((p) => p.type === "mobile"),
+    graphics: projectsData.filter((p) => p.type === "graphics"),
   };
 
   const rowsPerPage = 3;
@@ -289,7 +300,7 @@ const ProjectShowcase = () => {
   };
 
   const handlePageChange = (direction) => {
-    setCurrentPage((prevPage) => prevPage + direction);
+    setCurrentPage((prev) => prev + direction);
   };
 
   const paginatedProjects = projects[activeTab].slice(
@@ -297,97 +308,80 @@ const ProjectShowcase = () => {
     (currentPage + 1) * rowsPerPage
   );
 
-  const handleMouseMove = (e, index) => {
-    if (!cardRefs.current[index]) return;
+  const handleViewClick = (image) => setFullscreenImage(image);
+  const closeFullscreen = () => setFullscreenImage(null);
+  const handleProjectClick = (project) => setSelectedProject(project);
 
-    const { left, top, width, height } =
-      cardRefs.current[index].getBoundingClientRect();
-    const x = (e.clientX - left) / width;
-    const y = (e.clientY - top) / height;
-
-    cardRefs.current[index].style.setProperty("--mouse-x", `${x * 100}%`);
-    cardRefs.current[index].style.setProperty("--mouse-y", `${y * 100}%`);
-  };
-
-  const handleViewClick = (image) => {
-    setFullscreenImage(image);
-  };
-
-  const closeFullscreen = () => {
-    setFullscreenImage(null);
-  };
-
-  const handleProjectClick = (project) => {
-    setSelectedProject(project);
-  };
+  const totalPages = Math.ceil(projects[activeTab].length / rowsPerPage);
 
   return (
-    <div className="">
-      <div className="project-showcase flex flex-col gap-6 max-w-7xl mx-auto md:gap-20 md:flex-row">
-        {/* Tabs */}
-        <div className="tabs flex gap-x-1 justify-center md:flex-col md:w-[10%] md:justify-start md:gap-x-0 md:gap-y-[0.125rem]">
+    <div>
+      <div className="flex flex-col gap-8 md:flex-row md:gap-12">
+        {/* Tabs — vertical on desktop */}
+        <div className="flex gap-2 md:flex-col md:gap-1 md:w-24 shrink-0">
           {tabs.map((tab) => (
             <button
               key={tab}
-              className={`tab-button px-3 py-2 rounded-full text-sm md:text-base md:text-left md:rounded-tl-none md:rounded-tr-md md:rounded-bl-none md:rounded-br-md transition-all duration-300 ${
-                activeTab === tab
-                  ? "bg-[#7F1F9A] text-white"
-                  : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-              }`}
               onClick={() => handleTabClick(tab)}
+              className={`text-left font-mono text-[10px] uppercase tracking-widest px-3 py-2 transition-all duration-200 ${
+                activeTab === tab
+                  ? "text-gold border-l-2 border-gold bg-gold/5"
+                  : "text-warm-white/25 border-l-2 border-transparent hover:text-warm-white/50 hover:border-[#2a2a2a]"
+              }`}
             >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              {tab}
             </button>
           ))}
         </div>
 
-        <div className=" mx-2 md:w-[90%]">
-          {/* Project Grid */}
+        {/* Project grid */}
+        <div className="flex-1">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {paginatedProjects.map((project, index) => (
               <div
                 key={project.id}
                 ref={(el) => (cardRefs.current[index] = el)}
-                className="group relative bg-gray-800 rounded-xl border border-[#7F1F9A] overflow-hidden transform transition-all duration-300 md:border-none hover:-translate-y-2 cursor-pointer"
-                onMouseMove={(e) => handleMouseMove(e, index)}
+                className="group relative bg-surface border border-[#1e1e1e] hover:border-[#2e2e2e] overflow-hidden transition-all duration-300 cursor-pointer"
                 onClick={() => handleProjectClick(project)}
               >
-                {/* Image Container */}
-                <div className="relative h-44 overflow-hidden md:h-48">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="project-image w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-                  />
+                {/* Image */}
+                <div className="relative h-44 overflow-hidden bg-surface-2">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#0e0e0e] via-[#141414] to-[#0e0e0e]">
+                      <span className="font-display text-7xl text-gold/10 select-none">♟</span>
+                    </div>
+                  )}
+                  {/* Gold overlay on hover */}
+                  <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/5 transition-colors duration-300" />
                 </div>
 
-                {/* Project Type Badge */}
-                <span className="inline-block px-3 py-1 font-medium text-xs rounded-br-sm bg-[#7F1F9A] text-white">
-                  {project.type}
-                </span>
+                {/* Type tag */}
+                <div className="px-4 pt-3 pb-0">
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-gold/50">
+                    {project.type}
+                  </span>
+                </div>
 
                 {/* Content */}
-                <div className="p-4">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <h3
-                      className="text-xl font-bold text-white mb-1 overflow-hidden"
-                      style={{
-                        display: "-webkit-box",
-                        WebkitBoxOrient: "vertical",
-                        WebkitLineClamp: 2,
-                        overflow: "hidden",
-                      }}
-                    >
+                <div className="p-4 pt-1">
+                  <div className="flex items-start gap-2 flex-wrap mb-2">
+                    <h3 className="font-display text-lg text-warm-white/85 group-hover:text-warm-white transition-colors duration-200 leading-tight">
                       {project.title}
                     </h3>
                     {project.isStartup && (
-                      <span className="px-2 py-1 text-xs font-semibold bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full mb-1 animate-pulse">
-                        My Startup
+                      <span className="font-mono text-[8px] uppercase tracking-wider px-2 py-0.5 bg-gold/10 text-gold/70 shrink-0 mt-1">
+                        Startup
                       </span>
                     )}
                     {project.isPersonal && (
-                      <span className="px-2 py-1 text-xs font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full mb-1">
-                        Personal Project
+                      <span className="font-mono text-[8px] uppercase tracking-wider px-2 py-0.5 bg-[#1e1e1e] text-warm-white/30 shrink-0 mt-1">
+                        Personal
                       </span>
                     )}
                     {project.titleAddonTitle && (
@@ -395,30 +389,32 @@ const ProjectShowcase = () => {
                         href={project.titleAddonURL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-sm font-medium underline text-[#7F1F9A]"
+                        className="flex items-center gap-1 font-mono text-[9px] uppercase tracking-wider text-gold/40 hover:text-gold/70 transition-colors duration-200 mt-1"
+                        onClick={(e) => e.stopPropagation()}
                       >
-                        {project.titleAddonTitle} <TbExternalLink />
+                        {project.titleAddonTitle} <TbExternalLink size={10} />
                       </a>
                     )}
                   </div>
 
                   <p
-                    className="text-gray-400 mb-3 text-sm overflow-hidden"
+                    className="text-warm-white/35 text-xs leading-relaxed mb-3"
                     style={{
                       display: "-webkit-box",
                       WebkitBoxOrient: "vertical",
-                      WebkitLineClamp: 7,
+                      WebkitLineClamp: 4,
                       overflow: "hidden",
                     }}
                   >
                     {project.description}
                   </p>
 
-                  <div className="custom-projects-scrollbar flex gap-2 mt-3 mb-5 pb-1 overflow-x-auto whitespace-nowrap md:mb-6">
-                    {project.technologies.map((tech, index) => (
+                  {/* Tech tags */}
+                  <div className="custom-projects-scrollbar flex gap-1.5 mb-4 pb-1 overflow-x-auto whitespace-nowrap">
+                    {project.technologies.map((tech, i) => (
                       <span
-                        key={index}
-                        className="px-2 py-1 text-xs bg-gray-700 text-gray-300 rounded inline-block"
+                        key={i}
+                        className="font-mono text-[9px] uppercase tracking-wider px-2 py-1 bg-[#181818] text-warm-white/25 shrink-0"
                       >
                         {tech}
                       </span>
@@ -426,11 +422,11 @@ const ProjectShowcase = () => {
                   </div>
 
                   {/* Buttons */}
-                  <div className="flex space-x-3" onClick={(e) => e.stopPropagation()}>
+                  <div className="flex gap-2" onClick={(e) => e.stopPropagation()}>
                     {project.type === "graphics" ? (
                       <button
                         onClick={() => handleViewClick(project.image)}
-                        className="px-4 py-2 bg-gray-700 text-sm font-medium text-white rounded hover:bg-gray-600 transition-colors"
+                        className="font-mono text-[10px] uppercase tracking-wider px-4 py-2 border border-[#2a2a2a] text-warm-white/40 hover:border-gold/40 hover:text-gold transition-all duration-200"
                       >
                         View
                       </button>
@@ -441,7 +437,7 @@ const ProjectShowcase = () => {
                             href={project.demo}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-4 py-2 bg-[#7F1F9A] text-sm font-medium text-white rounded hover:bg-[#6a1a82] transition-colors"
+                            className="font-mono text-[10px] uppercase tracking-wider px-4 py-2 border border-gold/40 text-gold/70 hover:bg-gold hover:border-gold hover:text-ink transition-all duration-200"
                           >
                             Demo
                           </a>
@@ -451,7 +447,7 @@ const ProjectShowcase = () => {
                             href={project.code}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-4 py-2 bg-gray-700 text-sm font-medium text-white rounded hover:bg-gray-600 transition-colors"
+                            className="font-mono text-[10px] uppercase tracking-wider px-4 py-2 border border-[#2a2a2a] text-warm-white/35 hover:border-[#3a3a3a] hover:text-warm-white/60 transition-all duration-200"
                           >
                             Code
                           </a>
@@ -464,165 +460,164 @@ const ProjectShowcase = () => {
             ))}
           </div>
 
-          {/* Fullscreen Image Popup */}
-          {fullscreenImage && (
-            <div
-              className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
-              onClick={closeFullscreen}
-            >
-              <img
-                src={fullscreenImage}
-                alt="Fullscreen"
-                className="max-w-full max-h-full"
-              />
-              <button
-                className="absolute top-4 right-4 text-white text-3xl"
-                onClick={closeFullscreen}
-              >
-                &times;
-              </button>
-            </div>
-          )}
-
           {/* Pagination */}
-          <div className="pagination flex justify-center mt-8 space-x-4">
+          <div className="flex items-center justify-between mt-10 pt-6 border-t border-[#1a1a1a]">
             <button
-              className={`px-6 py-2 rounded-full transition-all duration-300 ${
+              className={`flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest transition-all duration-200 ${
                 currentPage === 0
-                  ? "bg-gray-800 text-gray-500 cursor-not-allowed"
-                  : "bg-gray-800 text-white hover:bg-gray-700"
+                  ? "text-warm-white/15 cursor-not-allowed"
+                  : "text-warm-white/40 hover:text-gold cursor-pointer"
               }`}
               onClick={() => handlePageChange(-1)}
               disabled={currentPage === 0}
             >
-              Previous
+              <MdOutlineKeyboardArrowLeft size={14} /> Prev
             </button>
+
+            <span className="font-mono text-[10px] text-warm-white/20">
+              {currentPage + 1} / {totalPages}
+            </span>
+
             <button
-              className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                currentPage >=
-                Math.ceil(projects[activeTab].length / rowsPerPage) - 1
-                  ? "bg-gray-800 text-gray-500 cursor-not-allowed"
-                  : "bg-gray-800 text-white hover:bg-gray-700"
+              className={`flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest transition-all duration-200 ${
+                currentPage >= totalPages - 1
+                  ? "text-warm-white/15 cursor-not-allowed"
+                  : "text-warm-white/40 hover:text-gold cursor-pointer"
               }`}
               onClick={() => handlePageChange(1)}
-              disabled={
-                currentPage >=
-                Math.ceil(projects[activeTab].length / rowsPerPage) - 1
-              }
+              disabled={currentPage >= totalPages - 1}
             >
-              Next
+              Next <MdOutlineKeyboardArrowRight size={14} />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Slide-in Project Details Panel — rendered via portal to escape parent transforms */}
-      {selectedProject && createPortal(
-        <>
-          {/* Overlay */}
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300"
-            onClick={closeProjectPanel}
-          ></div>
+      {/* Fullscreen image */}
+      {fullscreenImage && (
+        <div
+          className="fixed inset-0 bg-ink/95 flex items-center justify-center z-50"
+          onClick={closeFullscreen}
+        >
+          <img src={fullscreenImage} alt="Fullscreen" className="max-w-full max-h-full p-8" />
+          <button className="absolute top-6 right-6 text-warm-white/40 hover:text-gold transition-colors duration-200">
+            <IoMdClose size={28} />
+          </button>
+        </div>
+      )}
 
-          {/* Slide-in Panel */}
-          <div
-            className={`fixed top-0 right-0 h-full w-full md:w-2/3 lg:w-1/2 bg-gradient-to-b from-gray-900 to-gray-800 shadow-2xl z-50 overflow-y-auto transform transition-transform duration-300 ease-out ${
-              isPanelVisible ? "translate-x-0" : "translate-x-full"
-            }`}
-          >
-            {/* Close Button */}
-            <button
+      {/* Slide-in project detail panel */}
+      {selectedProject &&
+        createPortal(
+          <>
+            <div
+              className="fixed inset-0 bg-ink/70 z-50 transition-opacity duration-300"
               onClick={closeProjectPanel}
-              className="absolute top-4 right-4 text-white hover:text-[#7F1F9A] transition-colors duration-200 z-10"
+            />
+            <div
+              className={`fixed top-0 right-0 h-full w-full md:w-2/3 lg:w-[45%] bg-[#0c0c0c] border-l border-[#1e1e1e] shadow-2xl z-50 overflow-y-auto transform transition-transform duration-300 ease-out ${
+                isPanelVisible ? "translate-x-0" : "translate-x-full"
+              }`}
             >
-              <IoMdClose size={32} />
-            </button>
+              <button
+                onClick={closeProjectPanel}
+                className="absolute top-5 right-5 text-warm-white/30 hover:text-gold transition-colors duration-200 z-10"
+              >
+                <IoMdClose size={22} />
+              </button>
 
-            {/* Panel Content */}
-            <div className="p-6 md:p-8">
-              {/* Project Image */}
-              <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden mb-6">
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Project Header */}
-              <div className="mb-6">
-                <div className="flex items-center gap-3 mb-2 flex-wrap">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white">
-                    {selectedProject.title}
-                  </h2>
-                  {selectedProject.isStartup && (
-                    <span className="px-3 py-1 text-sm font-semibold bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full animate-pulse">
-                      My Startup
-                    </span>
-                  )}
-                  {selectedProject.isPersonal && (
-                    <span className="px-3 py-1 text-sm font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full">
-                      Personal Project
-                    </span>
+              <div className="p-7 md:p-10">
+                {/* Image */}
+                <div className="relative w-full h-56 md:h-72 overflow-hidden mb-8 bg-surface-2">
+                  {selectedProject.image ? (
+                    <img
+                      src={selectedProject.image}
+                      alt={selectedProject.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#0e0e0e] via-[#141414] to-[#0e0e0e]">
+                      <span className="font-display text-9xl text-gold/8 select-none">♟</span>
+                    </div>
                   )}
                 </div>
-                <span className="inline-block px-3 py-1 text-sm font-medium bg-[#7F1F9A] text-white rounded-full">
-                  {selectedProject.type.charAt(0).toUpperCase() + selectedProject.type.slice(1)}
-                </span>
-              </div>
 
-              {/* Description */}
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold text-white mb-3">About This Project</h3>
-                <p className="text-gray-300 leading-relaxed text-base">
-                  {selectedProject.description}
-                </p>
-              </div>
+                {/* Header */}
+                <div className="mb-7">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-gold/50 block mb-2">
+                    {selectedProject.type}
+                  </span>
+                  <div className="flex items-center gap-3 flex-wrap mb-1">
+                    <h2 className="font-display text-3xl md:text-4xl text-warm-white">
+                      {selectedProject.title}
+                    </h2>
+                    {selectedProject.isStartup && (
+                      <span className="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 bg-gold/10 text-gold/70">
+                        Startup
+                      </span>
+                    )}
+                    {selectedProject.isPersonal && (
+                      <span className="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 bg-[#1e1e1e] text-warm-white/30">
+                        Personal
+                      </span>
+                    )}
+                  </div>
+                  <span className="gold-line block mt-3 max-w-xs" />
+                </div>
 
-              {/* Technologies */}
-              <div className="mb-8">
-                <h3 className="text-xl font-semibold text-white mb-3">Technologies Used</h3>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-4 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition-colors"
+                {/* Description */}
+                {selectedProject.description && (
+                  <div className="mb-7">
+                    <span className="section-eyebrow mb-3">About</span>
+                    <p className="text-warm-white/50 leading-relaxed text-sm">
+                      {selectedProject.description}
+                    </p>
+                  </div>
+                )}
+
+                {/* Technologies */}
+                <div className="mb-8">
+                  <span className="section-eyebrow mb-3">Technologies</span>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.technologies.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="font-mono text-[10px] uppercase tracking-wider px-3 py-1.5 border border-[#2a2a2a] text-warm-white/40"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="flex gap-3 flex-wrap">
+                  {selectedProject.demo && (
+                    <a
+                      href={selectedProject.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 min-w-[120px] text-center font-mono text-[11px] uppercase tracking-widest px-6 py-3 border border-gold/60 text-gold hover:bg-gold hover:border-gold hover:text-ink transition-all duration-300"
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      View Demo
+                    </a>
+                  )}
+                  {selectedProject.code && (
+                    <a
+                      href={selectedProject.code}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 min-w-[120px] text-center font-mono text-[11px] uppercase tracking-widest px-6 py-3 border border-[#2a2a2a] text-warm-white/40 hover:border-[#3a3a3a] hover:text-warm-white/70 transition-all duration-300"
+                    >
+                      View Code
+                    </a>
+                  )}
                 </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex gap-4 flex-wrap">
-                {selectedProject.demo && (
-                  <a
-                    href={selectedProject.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 min-w-[120px] px-6 py-3 bg-gradient-to-r from-[#7F1F9A] to-purple-700 text-white text-center font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
-                  >
-                    View Demo
-                  </a>
-                )}
-                {selectedProject.code && (
-                  <a
-                    href={selectedProject.code}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 min-w-[120px] px-6 py-3 bg-gray-700 text-white text-center font-semibold rounded-lg hover:bg-gray-600 hover:shadow-lg hover:scale-105 transition-all duration-300"
-                  >
-                    View Code
-                  </a>
-                )}
               </div>
             </div>
-          </div>
-        </>,
-        document.body
-      )}
+          </>,
+          document.body
+        )}
     </div>
   );
 };
